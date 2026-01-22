@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 74, 56, 48; /* ihara-brown-dark */
+  --background-rgb: 255, 255, 255; /* ihara-white */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animaciones personalizadas */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Efectos de brillo dorado */
+.gold-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.1) 0%,
+    rgba(255, 215, 0, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gold-glow:hover::after {
+  opacity: 1;
+}

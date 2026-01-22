@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob: https:; font-src 'self' data: https://unpkg.com; connect-src 'self' https://api.netlify.com https://*.netlify.com https://*.netlify.app blob:; frame-src https://identity.netlify.com;">
+  <title>Panel de Administración - Ihara & London</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+  
+  <script>
+    // Esperar a que el CMS se cargue completamente
+    window.addEventListener('load', function() {
+      if (typeof CMS === 'undefined') {
+        console.error('Netlify CMS no se cargó correctamente');
+        return;
+      }
+      
+      // Personalización del CMS
+      CMS.registerPreviewStyle("/assets/styles/store.css");
+      
+      // Vista previa personalizada para productos
+      var ProductPreview = createClass({
+        render: function() {
+          var entry = this.props.entry;
+          var nombre = entry.getIn(['data', 'nombre']);
+          var precio = entry.getIn(['data', 'precio']);
+          var categoria = entry.getIn(['data', 'categoria']);
+          var descripcion = entry.getIn(['data', 'descripcion']);
+          var imagen = entry.getIn(['data', 'fotos', 0]);
+          var colores = entry.getIn(['data', 'colores']);
+          var talles = entry.getIn(['data', 'talles']);
+          
+          return h('div', {className: 'product-preview'},
+            h('div', {className: 'product-card'},
+              h('div', {className: 'product-image'},
+                imagen ? h('img', {src: imagen, alt: nombre}) : h('div', {className: 'no-image'}, '📦')
+              ),
+              h('div', {className: 'product-info'},
+                h('h3', {}, nombre),
+                h('p', {className: 'category'}, '📁 ' + categoria),
+                h('p', {}, descripcion),
+                h('div', {className: 'product-price'}, '€' + Number(precio).toFixed(2)),
+                colores && colores.size > 0 && h('div', {className: 'colors'},
+                  h('strong', {}, 'Colores: '),
+                  colores.map(function(color) {
+                    return h('span', {className: 'color-badge'}, color);
+                  })
+                ),
+                talles && talles.size > 0 && h('div', {className: 'sizes'},
+                  h('strong', {}, 'Talles: '),
+                  talles.map(function(talle) {
+                    return h('span', {className: 'size-badge'}, talle);
+                  })
+                )
+              )
+            )
+          );
+        }
+      });
+      
+      CMS.registerPreviewTemplate('productos', ProductPreview);
+    });
+  </script>
+  
+  <style>
+    .product-preview {
+      padding: 20px;
+      background: #f5f5f5;
+      min-height: 100vh;
+    }
+    .product-card {
+      max-width: 400px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .product-image {
+      height: 300px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .no-image {
+      font-size: 64px;
+    }
+    .product-info {
+      padding: 20px;
+    }
+    .product-info h3 {
+      margin: 0 0 10px 0;
+      color: #1a1a1a;
+    }
+    .category {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d4af37;
+      margin: 15px 0;
+    }
+    .colors, .sizes {
+      margin-top: 10px;
+    }
+    .color-badge, .size-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      margin: 2px;
+      background: #d4af37;
+      color: white;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+  </style>
+</body>
+</html>

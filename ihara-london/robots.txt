@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ihara-london.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /.netlify/
+
+# Allow important pages
+Allow: /ihara_london_store.html
+Allow: /legal.html
+Allow: /assets/
+
+# Crawl delay (optional)
+Crawl-delay: 1

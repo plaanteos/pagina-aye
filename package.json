@@ -1,0 +1,44 @@
+{
+  "name": "ihara-london-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tienda online premium Ihara & London",
+  "scripts": {
+    "dev": "npx -p netlify-cli netlify dev",
+    "build": "npm run minify-css && npm run minify-js",
+    "predeploy": "npm run build",
+    "minify-css": "cleancss -o ihara-london/assets/styles/store.min.css ihara-london/assets/styles/store.css",
+    "minify-js": "terser ihara-london/assets/js/store.js -o ihara-london/assets/js/store.min.js --compress --mangle && terser ihara-london/assets/js/payment-system.js -o ihara-london/assets/js/payment-system.min.js --compress --mangle",
+    "optimize-images": "imagemin ihara-london/public/images/**/*.{jpg,png,svg} --out-dir=ihara-london/public/images/optimized",
+    "deploy": "npx -p netlify-cli netlify deploy --prod --dir=ihara-london --functions=netlify/functions",
+    "test:admin": "node scripts/test-admin-functions.js",
+    "test:all": "npm run test:admin && echo 'Todos los tests completados'",
+    "setup:env": "node scripts/setup-environment.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "8.1.0",
+    "@netlify/blobs": "^6.0.0",
+    "jsonwebtoken": "9.0.2",
+    "zod": "3.23.8",
+    "mercadopago": "2.0.0",
+    "nodemailer": "^6.9.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.37.2",
+    "clean-css-cli": "^5.6.0",
+    "terser": "^5.19.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1"
+  },
+  "keywords": [
+    "ecommerce",
+    "jewelry",
+    "premium",
+    "netlify",
+    "javascript"
+  ],
+  "author": "Copes Jesús",
+  "license": "MIT"
+}

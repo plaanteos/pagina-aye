@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Builds y artefactos
+dist/
+build/
+.netlify/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Entornos
+.env
+.env.*
+
+# Datos temporales legacy
+server/data/

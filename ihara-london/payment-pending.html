@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Pendiente - Ihara & London</title>
+    <meta name="description" content="Tu pago está pendiente de confirmación. Te mantendremos informado del estado.">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/styles/store.css">
+    <style>
+        .pending-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .pending-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: spin 2s linear infinite;
+        }
+        
+        .pending-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .order-details {
+            background: #fef3c7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .payment-instructions {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #4f46e5;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #3730a3;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        
+        .btn-secondary:hover {
+            background: #f9fafb;
+        }
+        
+        .copy-button {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+        
+        .copy-button:hover {
+            background: #047857;
+        }
+        
+        @media (max-width: 768px) {
+            .pending-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pending-container">
+        <div class="pending-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/>
+                <path d="M12,7a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V8A1,1,0,0,0,12,7Z"/>
+                <circle cx="12" cy="16" r="1"/>
+            </svg>
+        </div>
+        
+        <h1>Pago Pendiente</h1>
+        <p class="text-lg text-gray-600 mb-4">
+            Tu pago está siendo procesado. Te notificaremos por email cuando se confirme.
+        </p>
+        
+        <div class="order-details">
+            <h3>⚠️ Estado del Pedido</h3>
+            <div id="order-info">
+                <p><strong>Número de pedido:</strong> <span id="order-number">Cargando...</span></p>
+                <p><strong>Estado:</strong> <span style="color: #d97706; font-weight: bold;">Pendiente de confirmación</span></p>
+                <p><strong>Método de pago:</strong> <span id="payment-method">Cargando...</span></p>
+                <p><strong>Fecha:</strong> <span id="order-date">Cargando...</span></p>
+            </div>
+        </div>
+        
+        <div id="payment-instructions" class="payment-instructions" style="display: none;">
+            <h3>Instrucciones para completar el pago</h3>
+            <div id="instructions-content"></div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/ihara-london/ihara_london_store.html" class="btn btn-primary">
+                Continuar Comprando
+            </a>
+            <a href="mailto:support@ihara-london.com" class="btn btn-secondary">
+                Contactar Soporte
+            </a>
+        </div>
+        
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+            <h4>¿Qué está pasando?</h4>
+            <div id="status-info">
+                <p>Tu pago está siendo verificado. Esto puede tomar desde unos minutos hasta 3 días hábiles dependiendo del método de pago utilizado.</p>
+                <ul style="text-align: left; max-width: 400px; margin: 1rem auto;">
+                    <li>💳 <strong>Tarjeta de crédito:</strong> Verificación inmediata</li>
+                    <li>🏦 <strong>Transferencia bancaria:</strong> 1-3 días hábiles</li>
+                    <li>💰 <strong>Efectivo (RapiPago/PagoFácil):</strong> Hasta 24 horas</li>
+                    <li>📱 <strong>Billetera digital:</strong> Verificación inmediata</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: #dbeafe; border-radius: 8px;">
+            <p><strong>💡 Importante:</strong> Conserva este número de pedido para futuras consultas. Te enviaremos actualizaciones por email.</p>
+        </div>
+    </div>
+
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar información del pedido
+            const paymentId = urlParams.get('payment_id');
+            const status = urlParams.get('status');
+            const externalReference = urlParams.get('external_reference');
+            const paymentType = urlParams.get('payment_type_id');
+            
+            if (paymentId) {
+                document.getElementById('order-number').textContent = externalReference || paymentId;
+            }
+            
+            if (paymentType) {
+                const methodName = getPaymentMethodName(paymentType);
+                document.getElementById('payment-method').textContent = methodName;
+                showPaymentInstructions(paymentType);
+            }
+            
+            document.getElementById('order-date').textContent = new Date().toLocaleDateString('es-AR');
+            
+            // Enviar evento para analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase_pending', {
+                    'transaction_id': externalReference || paymentId,
+                    'payment_type': paymentType || 'unknown'
+                });
+            }
+        });
+        
+        function getPaymentMethodName(paymentType) {
+            const methods = {
+                'rapipago': 'RapiPago',
+                'pagofacil': 'PagoFácil',
+                'bank_transfer': 'Transferencia Bancaria',
+                'credit_card': 'Tarjeta de Crédito',
+                'debit_card': 'Tarjeta de Débito',
+                'digital_wallet': 'Billetera Digital'
+            };
+            return methods[paymentType] || 'Mercado Pago';
+        }
+        
+        function showPaymentInstructions(paymentType) {
+            const instructionsDiv = document.getElementById('payment-instructions');
+            const contentDiv = document.getElementById('instructions-content');
+            
+            let instructions = '';
+            
+            switch(paymentType) {
+                case 'rapipago':
+                case 'pagofacil':
+                    instructions = `
+                        <p><strong>Para completar tu pago en efectivo:</strong></p>
+                        <ol>
+                            <li>Dirígete a cualquier sucursal de ${getPaymentMethodName(paymentType)}</li>
+                            <li>Presenta tu DNI y comunica que vas a pagar por Mercado Pago</li>
+                            <li>Proporciona el número de pedido: <strong>${urlParams.get('external_reference') || urlParams.get('payment_id')}</strong></li>
+                            <li>Realiza el pago en efectivo</li>
+                            <li>Conserva el comprobante hasta que se confirme tu pedido</li>
+                        </ol>
+                        <p><em>El pago puede tardar hasta 24 horas en acreditarse.</em></p>
+                    `;
+                    break;
+                case 'bank_transfer':
+                    instructions = `
+                        <p><strong>Para completar tu transferencia bancaria:</strong></p>
+                        <div style="background: white; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
+                            <p><strong>Datos para la transferencia:</strong></p>
+                            <p>Banco: Banco Galicia<br>
+                            CBU: 0070999830004567890123<br>
+                            Alias: IHARA.LONDON.MP<br>
+                            Titular: Ihara & London S.A.S<br>
+                            Referencia: ${urlParams.get('external_reference') || urlParams.get('payment_id')}
+                            <button class="copy-button" onclick="copyBankData()">Copiar datos</button></p>
+                        </div>
+                        <p><em>Incluye la referencia en el concepto de la transferencia.</em></p>
+                    `;
+                    break;
+                default:
+                    // Para otros tipos de pago, mostrar mensaje genérico
+                    return;
+            }
+            
+            contentDiv.innerHTML = instructions;
+            instructionsDiv.style.display = 'block';
+        }
+        
+        function copyBankData() {
+            const bankData = `Banco: Banco Galicia
+CBU: 0070999830004567890123
+Alias: IHARA.LONDON.MP
+Titular: Ihara & London S.A.S
+Referencia: ${urlParams.get('external_reference') || urlParams.get('payment_id')}`;
+            
+            navigator.clipboard.writeText(bankData).then(() => {
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '¡Copiado!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

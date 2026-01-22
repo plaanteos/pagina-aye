@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ihara & London</title>
+    <meta name="description" content="Tendencias en accesorios, guías de estilo y las últimas novedades de Ihara & London">
+    <link rel="stylesheet" href="assets/styles/store.css">
+    <style>
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-header h1 {
+            color: var(--gold-accent);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--gold-accent);
+            background: transparent;
+            color: var(--gold-accent);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--gold-accent);
+            color: var(--primary-black);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--gold-accent), var(--warm-brown));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--admin-gray);
+        }
+
+        .blog-category {
+            background: var(--light-gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .blog-title {
+            color: var(--primary-black);
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--admin-gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--primary-black);
+            margin: 0;
+        }
+
+        .author-role {
+            font-size: 0.875rem;
+            color: var(--admin-gray);
+            margin: 0;
+        }
+
+        .read-time {
+            font-size: 0.875rem;
+            color: var(--admin-gray);
+        }
+
+        .featured-post {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .featured-post .blog-image {
+            height: 300px;
+        }
+
+        .featured-post .blog-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-post .blog-title {
+            font-size: 2rem;
+        }
+
+        .newsletter-cta {
+            background: linear-gradient(135deg, var(--primary-black), var(--dark-gray));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .newsletter-cta h3 {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .newsletter-form button {
+            padding: 0.75rem 1.5rem;
+            background: var(--gold-accent);
+            color: var(--primary-black);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .blog-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .blog-modal-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .blog-modal-header {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, var(--gold-accent), var(--warm-brown));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .blog-modal-body {
+            padding: 2rem;
+        }
+
+        body.dark .blog-card {
+            background: var(--dark-gray);
+        }
+
+        body.dark .blog-title {
+            color: var(--white);
+        }
+
+        body.dark .author-name {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+                grid-column: 1;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="ihara_london_store.html" class="logo">Ihara & London</a>
+            <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button>
+        </nav>
+    </header>
+
+    <main class="blog-container">
+        <div class="blog-header">
+            <h1>Blog</h1>
+            <p>Tendencias, guías de estilo y las últimas novedades en accesorios de lujo</p>
+        </div>
+
+        <div class="blog-categories">
+            <button class="category-btn active" data-category="all">Todos</button>
+            <button class="category-btn" data-category="tendencias">Tendencias</button>
+            <button class="category-btn" data-category="guias">Guías de Estilo</button>
+            <button class="category-btn" data-category="cuidados">Cuidados</button>
+            <button class="category-btn" data-category="novedades">Novedades</button>
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+            <!-- Featured Post -->
+            <article class="blog-card featured-post" data-category="tendencias">
+                <div class="blog-image">💎</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Tendencias</span>
+                        <span class="blog-date">📅 25 Agosto 2025</span>
+                        <span class="read-time">⏱️ 5 min</span>
+                    </div>
+                    <h2 class="blog-title">Las Tendencias en Joyería que Marcarán el Otoño 2025</h2>
+                    <p class="blog-excerpt">
+                        Descubre las tendencias más importantes en accesorios para esta temporada. Desde las formas geométricas hasta los materiales sostenibles, te contamos todo lo que necesitas saber para estar a la vanguardia.
+                    </p>
+                    <div class="blog-author">
+                        <div class="author-avatar">MG</div>
+                        <div class="author-info">
+                            <p class="author-name">María García</p>
+                            <p class="author-role">Directora de Estilo</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Regular Posts -->
+            <article class="blog-card" data-category="guias">
+                <div class="blog-image">👜</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Guías</span>
+                        <span class="blog-date">📅 22 Agosto 2025</span>
+                        <span class="read-time">⏱️ 3 min</span>
+                    </div>
+                    <h3 class="blog-title">Cómo Elegir el Bolso Perfecto para Cada Ocasión</h3>
+                    <p class="blog-excerpt">
+                        Una guía completa para seleccionar el bolso ideal según el evento, tu estilo personal y las últimas tendencias en la moda.
+                    </p>
+                    <div class="blog-author">
+                        <div class="author-avatar">AL</div>
+                        <div class="author-info">
+                            <p class="author-name">Ana López</p>
+                            <p class="author-role">Consultora de Moda</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="cuidados">
+                <div class="blog-image">⌚</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Cuidados</span>
+                        <span class="blog-date">📅 20 Agosto 2025</span>
+                        <span class="read-time">⏱️ 4 min</span>
+                    </div>
+                    <h3 class="blog-title">Mantén tus Relojes como Nuevos: Guía de Cuidado</h3>
+                    <p class="blog-excerpt">
+                        Consejos expertos para el mantenimiento de relojes mecánicos y de cuarzo. Prolonga la vida útil de tu inversión.
+                    </p>
+                    <div class="blog-author">
+                        <div class="author-avatar">CS</div>
+                        <div class="author-info">
+                            <p class="author-name">Carlos Sánchez</p>
+                            <p class="author-role">Relojero Maestro</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="novedades">
+                <div class="blog-image">💍</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Novedades</span>
+                        <span class="blog-date">📅 18 Agosto 2025</span>
+                        <span class="read-time">⏱️ 2 min</span>
+                    </div>
+                    <h3 class="blog-title">Nueva Colección: Anillos de Compromiso Cosmos</h3>
+                    <p class="blog-excerpt">
+                        Presentamos nuestra nueva línea de anillos inspirada en las constelaciones, perfecta para momentos únicos.
+                    </p>
+                    <div class="blog-author">
+                        <div class="author-avatar">LR</div>
+                        <div class="author-info">
+                            <p class="author-name">Laura Rodríguez</p>
+                            <p class="author-role">Diseñadora Jefe</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="tendencias">
+                <div class="blog-image">✨</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Tendencias</span>
+                        <span class="blog-date">📅 15 Agosto 2025</span>
+                        <span class="read-time">⏱️ 6 min</span>
+                    </div>
+                    <h3 class="blog-title">Joyería Sostenible: El Futuro es Responsable</h3>
+                    <p class="blog-excerpt">
+                        Exploramos las prácticas sostenibles en la industria de la joyería y cómo Ihara & London lidera este cambio.
+                    </p>
+                    <div class="blog-author">
+                        <div class="author-avatar">PM</div>
+                        <div class="author-info">
+                            <p class="author-name">Pedro Martín</p>
+                            <p class="author-role">Especialista en Sostenibilidad</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="guias">
+                <div class="blog-image">🎨</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Guías</span>
+                        <span class="blog-date">📅 12 Agosto 2025</span>
+                        <span class="read-time">⏱️ 4 min</span>
+                    </div>
+                    <h3 class="blog-title">Combinar Accesorios: El Arte del Equilibrio</h3>
+                    <p class="blog-excerpt">
+                        Aprende a crear looks armoniosos combinando diferentes tipos de accesorios sin sobrecargar tu outfit.
+                    </p>
+                    <div class="blog-author">
+                        <div class="author-avatar">SF</div>
+                        <div class="author-info">
+                            <p class="author-name">Sofía Fernández</p>
+                            <p class="author-role">Estilista Personal</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="newsletter-cta">
+            <h3>¿Te gustó este contenido?</h3>
+            <p>Suscríbete a nuestro newsletter y recibe las últimas tendencias y consejos de estilo directamente en tu email</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu email" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Blog Modal -->
+    <div id="blogModal" class="blog-modal">
+        <div class="blog-modal-content">
+            <div class="blog-modal-header">
+                <button class="close-modal" id="closeModal">✕</button>
+                <span id="modalIcon">💎</span>
+            </div>
+            <div class="blog-modal-body">
+                <div id="modalContent">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            const modal = document.getElementById('blogModal');
+            const closeModal = document.getElementById('closeModal');
+            const modalContent = document.getElementById('modalContent');
+            const modalIcon = document.getElementById('modalIcon');
+
+            // Category filtering
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const category = btn.dataset.category;
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Blog post modal
+            blogCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const title = card.querySelector('.blog-title').textContent;
+                    const excerpt = card.querySelector('.blog-excerpt').textContent;
+                    const icon = card.querySelector('.blog-image').textContent;
+                    const category = card.querySelector('.blog-category').textContent;
+                    const date = card.querySelector('.blog-date').textContent;
+                    const author = card.querySelector('.author-name').textContent;
+                    const role = card.querySelector('.author-role').textContent;
+
+                    modalIcon.textContent = icon;
+                    modalContent.innerHTML = generateFullArticle(title, excerpt, category, date, author, role);
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Newsletter form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = e.target.querySelector('input[type="email"]').value;
+                alert(`¡Gracias! Te has suscrito con el email: ${email}`);
+                e.target.reset();
+            });
+
+            // Theme toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.classList.toggle('dark', savedTheme === 'dark');
+
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+            });
+        });
+
+        function generateFullArticle(title, excerpt, category, date, author, role) {
+            return `
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.875rem; color: #6b7280;">
+                        <span style="background: #f3f4f6; padding: 0.25rem 0.75rem; border-radius: 15px; font-weight: 600;">${category}</span>
+                        <span>${date}</span>
+                        <span>Por ${author}</span>
+                    </div>
+                    <h1 style="color: var(--gold-accent); font-size: 2rem; margin-bottom: 1rem;">${title}</h1>
+                    <p style="font-size: 1.125rem; line-height: 1.6; margin-bottom: 2rem; color: #6b7280;">${excerpt}</p>
+                </div>
+                
+                <div style="line-height: 1.7; color: #374151;">
+                    <h2 style="color: var(--gold-accent); margin: 2rem 0 1rem;">Introducción</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    
+                    <h2 style="color: var(--gold-accent); margin: 2rem 0 1rem;">Desarrollo del Tema</h2>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    
+                    <h2 style="color: var(--gold-accent); margin: 2rem 0 1rem;">Conclusión</h2>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                    
+                    <div style="background: #f3f4f6; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid var(--gold-accent);">
+                        <p style="margin: 0; font-style: italic;"><strong>Sobre el autor:</strong> ${author} es ${role} en Ihara & London con más de 10 años de experiencia en la industria de la moda y accesorios de lujo.</p>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

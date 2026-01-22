@@ -1,0 +1,101 @@
+backend:
+  name: git-gateway
+  branch: main # Cambia a 'master' si tu rama principal se llama master
+
+# Configuración de publicación - Los productos no se publican hasta aprobar
+publish_mode: editorial_workflow
+
+# Autenticación requerida
+# Solo usuarios autorizados pueden agregar/editar productos
+
+# Configuración de medios (imágenes)
+media_folder: "ihara-london/public/images/products" # Donde se guardan las imágenes
+public_folder: "/public/images/products" # Ruta pública para las imágenes
+
+# Idioma de la interfaz
+locale: 'es'
+
+# Configuración de colecciones
+collections:
+  # Colección de Productos
+  - name: "productos"
+    label: "Productos"
+    label_singular: "Producto"
+    folder: "ihara-london/_products"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: true
+    fields:
+      - {label: "Nombre del Producto", name: "nombre", widget: "string", required: true}
+      - {label: "Precio (en euros)", name: "precio", widget: "number", value_type: "float", min: 0, step: 0.01, required: true}
+      - {label: "Categoría", name: "categoria", widget: "select", options: ["anillos", "collares", "bolsos", "relojes", "gafas", "pulseras", "pendientes", "accesorios"], required: true}
+      - {label: "Material", name: "material", widget: "select", options: ["oro", "plata", "bronce", "acero", "cuero", "tela", "plastico", "madera", "otro"], required: true}
+      - {label: "Rating (1-5)", name: "rating", widget: "number", value_type: "float", min: 1, max: 5, step: 0.1, default: 5.0}
+      - {label: "Descripción Corta", name: "descripcion_corta", widget: "string", required: true}
+      - {label: "Descripción Completa", name: "descripcion", widget: "text", required: true}
+      - label: "Fotos del Producto"
+        name: "fotos"
+        widget: "list"
+        required: true
+        min: 1
+        max: 5
+        field: {label: "Imagen", name: "imagen", widget: "image"}
+      - label: "Colores Disponibles"
+        name: "colores"
+        widget: "select"
+        multiple: true
+        required: false
+        options:
+          - {label: "Oro", value: "oro"}
+          - {label: "Plata", value: "plata"}
+          - {label: "Rose Gold", value: "rose-gold"}
+          - {label: "Negro", value: "negro"}
+          - {label: "Blanco", value: "blanco"}
+          - {label: "Marrón", value: "marron"}
+          - {label: "Azul", value: "azul"}
+          - {label: "Rojo", value: "rojo"}
+          - {label: "Verde", value: "verde"}
+          - {label: "Rosa", value: "rosa"}
+      - label: "Talles Disponibles"
+        name: "talles"
+        widget: "select"
+        multiple: true
+        required: false
+        options: ["XS", "S", "M", "L", "XL", "XXL", "Único"]
+      - {label: "Stock Disponible", name: "stock", widget: "number", value_type: "int", min: 0, default: 0, required: true}
+      - {label: "Producto Destacado", name: "destacado", widget: "boolean", default: false}
+      - {label: "Nuevo Ingreso", name: "nuevo", widget: "boolean", default: false}
+      - {label: "En Oferta", name: "en_oferta", widget: "boolean", default: false}
+      - {label: "Precio Original (si está en oferta)", name: "precio_original", widget: "number", value_type: "float", min: 0, required: false}
+      - {label: "Activo", name: "activo", widget: "boolean", default: true}
+      - {label: "Fecha de Creación", name: "fecha_creacion", widget: "datetime", default: "", format: "YYYY-MM-DD"}
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Título SEO", name: "titulo", widget: "string", required: false}
+          - {label: "Descripción SEO", name: "descripcion", widget: "text", required: false}
+          - {label: "Palabras Clave", name: "keywords", widget: "string", required: false}
+
+  # Configuración del sitio
+  - name: "configuracion"
+    label: "Configuración"
+    files:
+      - label: "Configuración General"
+        name: "general"
+        file: "ihara-london/_config/general.json"
+        format: "json"
+        fields:
+          - {label: "Nombre de la Tienda", name: "nombre_tienda", widget: "string"}
+          - {label: "Descripción", name: "descripcion", widget: "text"}
+          - {label: "Email de Contacto", name: "email", widget: "string"}
+          - {label: "Teléfono", name: "telefono", widget: "string"}
+          - {label: "Dirección", name: "direccion", widget: "text"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Moneda", name: "moneda", widget: "select", options: ["EUR", "USD", "ARS"], default: "EUR"}
+          - {label: "IVA (%)", name: "iva", widget: "number", value_type: "int", default: 21}
+          - {label: "Envío Gratis desde", name: "envio_gratis_desde", widget: "number", default: 50}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Confirmar Suscripción • Ihara & London</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<style>
+:root { --gold:#d4af37; --bg:#0d0d0d; --panel:#161616; --border:#242424; --txt:#f5f5f5; }
+body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--txt); min-height:100dvh; display:flex; align-items:center; justify-content:center; padding:40px 20px; }
+.card { width:100%; max-width:520px; background:var(--panel); border:1px solid var(--border); border-radius:28px; padding:38px 40px 44px; box-shadow:0 18px 40px -14px rgba(0,0,0,.55); position:relative; overflow:hidden; }
+.card:before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 20% 15%,rgba(212,175,55,.18),transparent 60%); pointer-events:none; }
+.logo { font-size:15px; letter-spacing:3px; font-weight:600; text-transform:uppercase; color:var(--gold); margin:0 0 14px; }
+h1 { font-size:1.9rem; line-height:1.15; margin:0 0 1rem; background:linear-gradient(45deg,#fff,var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+p { line-height:1.55; font-size:.95rem; margin:.85rem 0; }
+.status { margin:1.4rem 0 1rem; font-size:.85rem; letter-spacing:.5px; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:.5rem; }
+.button-row { margin-top:1.6rem; display:flex; gap:.8rem; flex-wrap:wrap; }
+.btn { background:var(--gold); color:#121212; padding:14px 24px; border:none; font-weight:600; font-size:.8rem; letter-spacing:.8px; border-radius:40px; cursor:pointer; transition:.3s; }
+.btn:hover { filter:brightness(.9); }
+.btn.outline { background:transparent; color:var(--gold); border:1px solid var(--gold); }
+small { opacity:.6; font-size:.65rem; display:block; margin-top:2.2rem; line-height:1.4; }
+.code { font-family:monospace; background:#1f1f1f; padding:4px 8px; border-radius:6px; font-size:.7rem; }
+.progress { width:100%; height:6px; background:#1f1f1f; border-radius:4px; margin-top:1.2rem; overflow:hidden; position:relative; }
+.progress span { position:absolute; inset:0; width:35%; background:linear-gradient(90deg,var(--gold),#ffdd7c); animation:load 1.3s linear infinite; }
+@keyframes load { 0%{transform:translateX(-100%);} 100%{transform:translateX(300%);} }
+.result-box { background:#1b1b1b; border:1px solid #272727; padding:18px 20px; border-radius:16px; margin-top:1.2rem; font-size:.8rem; line-height:1.4; }
+.success { border-color:rgba(70,170,70,.35); box-shadow:0 0 0 1px rgba(70,170,70,.25); }
+.error { border-color:rgba(200,70,70,.4); box-shadow:0 0 0 1px rgba(200,70,70,.25); }
+.hidden { display:none !important; }
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <p class="logo">Ihara & London</p>
+    <h1>Confirmación de Suscripción</h1>
+    <p id="intro">Estamos validando tu token de suscripción…</p>
+    <div class="progress" id="loader"><span></span></div>
+    <div id="result" class="result-box hidden"></div>
+    <div class="button-row hidden" id="actions">
+      <button class="btn" id="goStore">Ir a la tienda</button>
+      <button class="btn outline" id="resend" hidden>Reintentar</button>
+    </div>
+    <small>Si cierras esta página antes de finalizar puedes volver al enlace del correo. El token expira en 48h.<br>Soporte: <span class="code">info@iharalondon.com</span></small>
+  </div>
+<script>
+(function(){
+  // Endpoint de confirmación con redirect Netlify
+  const API = (window.CONFIRM_ENDPOINT || '/api/newsletter/confirm');
+  const params = new URLSearchParams(location.search);
+  const token = params.get('token');
+  const intro = document.getElementById('intro');
+  const result = document.getElementById('result');
+  const loader = document.getElementById('loader');
+  const actions = document.getElementById('actions');
+  const goStore = document.getElementById('goStore');
+  const resend = document.getElementById('resend');
+  goStore.addEventListener('click', ()=>{ window.location.href = './ihara_london_store.html'; });
+  if(!token){ loader.classList.add('hidden'); intro.textContent='Falta el token de confirmación.'; showResult('No se recibió un token. Verifica el enlace.', true); return; }
+  fetch(`${API}/${encodeURIComponent(token)}`)
+    .then(async r=>{
+      const text = await r.text();
+      loader.classList.add('hidden');
+      actions.classList.remove('hidden');
+      if(r.ok){ showResult('¡Suscripción confirmada con éxito! Ya recibirás nuestras novedades.', false); intro.textContent='Listo.'; }
+      else if(r.status===410){ showResult('El token expiró. Solicita una nueva suscripción.', true); intro.textContent='Token expirado.'; resend.hidden=false; }
+      else if(r.status===404){ showResult('Token inválido o ya usado.', true); intro.textContent='No válido.'; }
+      else { showResult('Error procesando el token.', true); intro.textContent='Error.'; }
+    })
+    .catch(()=>{ loader.classList.add('hidden'); showResult('No se pudo contactar el servidor.', true); actions.classList.remove('hidden'); intro.textContent='Error de red.'; });
+  resend.addEventListener('click', ()=>{ window.location.href='./ihara_london_store.html#newsletter'; });
+  function showResult(msg, isErr){ result.textContent=msg; result.classList.remove('hidden','success','error'); result.classList.add(isErr?'error':'success'); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "nombre_tienda": "Ihara & London",
+  "descripcion": "Tienda premium de joyería, accesorios y artículos de lujo con diseño británico y elegancia atemporal.",
+  "email": "contacto@iharalondón.com",
+  "telefono": "+54 9 3492 61-3004",
+  "direccion": "Ituzaingó 562, San Cristóbal, Santa Fe, Argentina",
+  "logo": "/public/images/logo.png",
+  "moneda": "EUR",
+  "iva": 21,
+  "envio_gratis_desde": 50
+}

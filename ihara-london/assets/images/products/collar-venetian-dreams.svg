@@ -1,0 +1,16 @@
+<!-- Collar Venetian Dreams -->
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bronzeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CD7F32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#f8f8f8"/>
+  <ellipse cx="200" cy="200" rx="120" ry="80" fill="none" stroke="url(#bronzeGradient)" stroke-width="8"/>
+  <circle cx="150" cy="160" r="8" fill="#4169E1"/>
+  <circle cx="250" cy="160" r="8" fill="#32CD32"/>
+  <circle cx="180" cy="240" r="6" fill="#FF4500"/>
+  <circle cx="220" cy="240" r="6" fill="#9370DB"/>
+  <text x="200" y="320" text-anchor="middle" font-family="serif" font-size="18" fill="#8B4513">Collar Venetian Dreams</text>
+</svg>

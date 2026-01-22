@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Pago Exitoso! - Ihara & London</title>
+    <meta name="description" content="Tu pago se ha procesado correctamente. Gracias por tu compra en Ihara & London.">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/styles/store.css">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .order-details {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #4f46e5;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #3730a3;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        
+        .btn-secondary:hover {
+            background: #f9fafb;
+        }
+        
+        @media (max-width: 768px) {
+            .success-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+        </div>
+        
+        <h1>¡Pago Exitoso!</h1>
+        <p class="text-lg text-gray-600 mb-4">
+            Tu pago se ha procesado correctamente. En breve recibirás un email de confirmación con los detalles de tu pedido.
+        </p>
+        
+        <div class="order-details">
+            <h3>Detalles del Pedido</h3>
+            <div id="order-info">
+                <p><strong>Número de pedido:</strong> <span id="order-number">Cargando...</span></p>
+                <p><strong>Total pagado:</strong> <span id="order-total">Cargando...</span></p>
+                <p><strong>Método de pago:</strong> <span id="payment-method">Cargando...</span></p>
+                <p><strong>Fecha:</strong> <span id="order-date">Cargando...</span></p>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/ihara-london/ihara_london_store.html" class="btn btn-primary">
+                Continuar Comprando
+            </a>
+            <a href="mailto:support@ihara-london.com" class="btn btn-secondary">
+                Contactar Soporte
+            </a>
+        </div>
+        
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+            <h4>¿Qué sigue?</h4>
+            <ul style="text-align: left; max-width: 400px; margin: 1rem auto;">
+                <li>✅ Recibirás un email de confirmación</li>
+                <li>📦 Procesaremos tu pedido en 1-2 días hábiles</li>
+                <li>🚚 Te enviaremos el código de seguimiento</li>
+                <li>💬 Cualquier duda, contáctanos</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar información del pedido si está disponible
+            const paymentId = urlParams.get('payment_id');
+            const status = urlParams.get('status');
+            const externalReference = urlParams.get('external_reference');
+            const merchantOrderId = urlParams.get('merchant_order_id');
+            
+            if (paymentId) {
+                document.getElementById('order-number').textContent = externalReference || paymentId;
+            }
+            
+            if (status) {
+                document.getElementById('payment-method').textContent = getPaymentMethodName(status);
+            }
+            
+            document.getElementById('order-date').textContent = new Date().toLocaleDateString('es-AR');
+            
+            // Simular total (en una implementación real, esto vendría del servidor)
+            const cartTotal = localStorage.getItem('cart_total');
+            if (cartTotal) {
+                document.getElementById('order-total').textContent = `$${parseFloat(cartTotal).toLocaleString('es-AR')} ARS`;
+            }
+            
+            // Limpiar carrito después del pago exitoso
+            localStorage.removeItem('cart');
+            localStorage.removeItem('cart_total');
+            
+            // Enviar evento de conversión para analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase', {
+                    'transaction_id': externalReference || paymentId,
+                    'value': cartTotal || 0,
+                    'currency': 'ARS',
+                    'payment_type': 'mercadopago'
+                });
+            }
+        });
+        
+        function getPaymentMethodName(status) {
+            const methods = {
+                'approved': 'Aprobado',
+                'pending': 'Pendiente',
+                'in_process': 'En proceso'
+            };
+            return methods[status] || 'Mercado Pago';
+        }
+    </script>
+</body>
+</html>

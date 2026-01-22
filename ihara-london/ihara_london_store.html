@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihara & London - Accesorios Premium | Joyería de Lujo Online</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Descubre la elegancia atemporal en Ihara & London. Tienda online de accesorios premium: anillos de oro, collares artesanales, bolsos de lujo y relojes exclusivos. Envío gratis en pedidos superiores a $50.">
+    <meta name="keywords" content="joyería premium, accesorios lujo, anillos oro 18k, collares artesanales, bolsos diseñador, relojes exclusivos, Ihara London">
+    <meta name="author" content="Ihara & London">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="es">
+    <meta name="theme-color" content="#D4AF37">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="canonical" href="https://iharalondon.netlify.app/ihara_london_store.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ihara & London - Elegancia Atemporal en Cada Detalle">
+    <meta property="og:description" content="Colección exclusiva de accesorios premium. Diseños únicos que reflejan sofisticación y estilo atemporal.">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://iharalondon.netlify.app/ihara_london_store.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ihara & London">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ihara & London - Accesorios Premium">
+    <meta name="twitter:description" content="Elegancia atemporal en cada detalle. Descubre nuestra colección exclusiva.">
+    <meta name="twitter:image" content="assets/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/styles/store.min.css" as="style">
+    <link rel="preload" href="assets/js/store.min.js" as="script">
+    <link rel="preload" href="assets/js/payment-system.min.js" as="script">
+    
+    <!-- BEGIN: Recursos externos optimizados -->
+    <link rel="stylesheet" href="assets/styles/store.min.css">
+    <!-- END: Recursos externos optimizados -->
+
+        <!-- Minimal styles for cookie banner -->
+        <style>
+            .cookie-banner{position:fixed;left:0;right:0;bottom:0;background:#111;color:#eee;padding:12px 16px;display:none;align-items:center;gap:12px;z-index:9999;box-shadow:0 -2px 12px rgba(0,0,0,.3)}
+            .cookie-banner.show{display:flex}
+            .cookie-banner button{background:#d4af37;color:#111;border:0;padding:8px 14px;border-radius:999px;font-weight:600;cursor:pointer}
+            
+            /* Force write review section to always be visible */
+            .write-review-section {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                position: relative !important;
+                padding: 2rem !important;
+                text-align: center !important;
+                background: rgba(255, 255, 255, 0.95) !important;
+                border-top: 2px solid #d4af37 !important;
+                margin-top: 1rem !important;
+            }
+            
+            .write-review-btn {
+                display: inline-flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                background: linear-gradient(135deg, #d4af37, #b8941f) !important;
+                color: #fff !important;
+                border: none !important;
+                padding: 1rem 2rem !important;
+                border-radius: 25px !important;
+                font-weight: 600 !important;
+                cursor: pointer !important;
+                transition: all 0.3s ease !important;
+                gap: 0.75rem !important;
+                align-items: center !important;
+                font-size: 1rem !important;
+                box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+            }
+            
+            .write-review-btn:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
+            }
+            
+            /* Write Review Modal Styles */
+            .write-review-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                animation: fadeIn 0.3s ease;
+            }
+            
+            .write-review-content {
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                max-width: 500px;
+                width: 90%;
+                max-height: 90vh;
+                overflow-y: auto;
+                position: relative;
+            }
+            
+            .write-review-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1.5rem;
+                border-bottom: 2px solid #d4af37;
+                padding-bottom: 1rem;
+            }
+            
+            .write-review-header h3 {
+                margin: 0;
+                color: #333;
+                font-size: 1.5rem;
+            }
+            
+            .close-modal-btn {
+                background: none;
+                border: none;
+                font-size: 2rem;
+                color: #666;
+                cursor: pointer;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+            
+            .close-modal-btn:hover {
+                background: #f5f5f5;
+                color: #d4af37;
+                transform: scale(1.1);
+            }
+            
+            /* Star Rating Styles */
+            .star-rating {
+                display: flex;
+                gap: 0.25rem;
+                margin: 0.5rem 0;
+            }
+            
+            .star {
+                font-size: 2rem;
+                color: #ddd;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                user-select: none;
+                line-height: 1;
+            }
+            
+            .star:hover {
+                color: #d4af37;
+                transform: scale(1.1);
+            }
+            
+            .star.active {
+                color: #d4af37;
+            }
+            
+            .star:focus {
+                outline: 2px solid #d4af37;
+                outline-offset: 2px;
+                border-radius: 3px;
+            }
+            
+            /* Form Styles */
+            .review-form .form-group {
+                margin-bottom: 1.5rem;
+            }
+            
+            .review-form label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+                color: #333;
+            }
+            
+            .review-form input,
+            .review-form textarea {
+                width: 100%;
+                padding: 0.75rem;
+                border: 2px solid #ddd;
+                border-radius: 6px;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+                box-sizing: border-box;
+            }
+            
+            .review-form input:focus,
+            .review-form textarea:focus {
+                outline: none;
+                border-color: #d4af37;
+            }
+            
+            .char-counter {
+                font-size: 0.875rem;
+                color: #666;
+                margin-top: 0.25rem;
+                display: block;
+            }
+            
+            .form-actions {
+                display: flex;
+                gap: 1rem;
+                justify-content: flex-end;
+                margin-top: 2rem;
+                padding-top: 1rem;
+                border-top: 1px solid #eee;
+            }
+            
+            .cancel-btn {
+                padding: 0.75rem 1.5rem;
+                border: 2px solid #ddd;
+                background: white;
+                color: #666;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            
+            .cancel-btn:hover {
+                border-color: #666;
+                color: #333;
+            }
+            
+            .submit-btn {
+                padding: 0.75rem 1.5rem;
+                background: linear-gradient(135deg, #d4af37, #b8941f);
+                color: white;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+            
+            .submit-btn:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            }
+            
+            /* Animations */
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        </style>
+
+        <!-- Analytics deferred until cookie consent -->
+        <script>
+            (function(){
+                const consentKey='cookieConsent';
+                function loadAnalytics(){
+                    // GA4
+                    var s=document.createElement('script');
+                    s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-IHARA2025LD';
+                    document.head.appendChild(s);
+                    window.dataLayer=window.dataLayer||[];
+                    function gtag(){dataLayer.push(arguments);} window.gtag=gtag;
+                    gtag('js', new Date());
+                    gtag('config','G-IHARA2025LD',{enhanced_ecommerce:true,custom_map:{'custom_parameter_1':'dimension1'}});
+                    // Facebook Pixel
+                    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                    n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init','1234567890123456'); fbq('track','PageView');
+                    // Hotjar
+                    (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:4567890,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+                }
+                function showBanner(){ var b=document.getElementById('cookieBanner'); if(b) b.classList.add('show'); }
+                function accept(){ localStorage.setItem(consentKey,'accepted'); var b=document.getElementById('cookieBanner'); if(b) b.classList.remove('show'); loadAnalytics(); }
+                window.__consent={accept:accept, loadAnalytics:loadAnalytics};
+                if(localStorage.getItem(consentKey)==='accepted'){ loadAnalytics(); }
+                else { document.addEventListener('DOMContentLoaded', showBanner); }
+            })();
+        </script>
+</head>
+<body>
+        <!-- Cookie Consent Banner -->
+        <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+            <span>Usamos cookies de analítica (GA/FB/Hotjar) para mejorar tu experiencia. ¿Aceptas?</span>
+            <button type="button" onclick="__consent.accept()">Aceptar</button>
+        </div>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">Ihara & London</a>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="search" id="searchInput" placeholder="Buscar productos..." aria-label="Buscar productos">
+                <button type="button" id="searchButton" aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <button id="navToggle" class="nav-toggle" aria-label="Menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button></li>
+                <li class="favorites-icon">
+                    <button id="favoritesButton" class="favorites-button" aria-label="Favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-.94-1.06a5.5 5.5 0 0 0-7.78 7.78l.97.97L12 21.35l7.75-7.75.97-.97a5.5 5.5 0 0 0 0-7.78Z"/></svg>
+                        <span class="favorites-count">0</span>
+                    </button>
+                </li>
+                <li class="cart-icon">
+                    <button id="cartButton" class="cart-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb" class="breadcrumb-nav" style="display: none;">
+            <ol class="breadcrumb">
+                <li><a href="#home">Inicio</a></li>
+                <li id="currentSection">Productos</li>
+            </ol>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="floating-elements">
+            <div class="float-element"></div>
+            <div class="float-element"></div>
+            <div class="float-element"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Ihara & London</h1>
+            <p>Elegancia Atemporal en Cada Detalle</p>
+            <a href="#productos" class="cta-button">Descubrir Colección</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <h2 class="section-title reveal">Nuestra Colección Exclusiva</h2>
+        
+        <!-- Advanced Filters -->
+        <div class="filters-container reveal">
+            <div class="product-filters">
+                <button class="filter-btn active" data-category="todos">Todos</button>
+                <button class="filter-btn" data-category="anillos">Anillos</button>
+                <button class="filter-btn" data-category="collares">Collares</button>
+                <button class="filter-btn" data-category="bolsos">Bolsos</button>
+                <button class="filter-btn" data-category="relojes">Relojes</button>
+            </div>
+            
+            <div class="advanced-filters">
+                <div class="filter-group">
+                    <label for="priceRange">Rango de Precio:</label>
+                    <select id="priceRange" class="filter-select">
+                        <option value="all">Todos los precios</option>
+                        <option value="0-100">$0 - $100</option>
+                        <option value="100-300">$100 - $300</option>
+                        <option value="300-500">$300 - $500</option>
+                        <option value="500+">$500+</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sortBy">Ordenar por:</label>
+                    <select id="sortBy" class="filter-select">
+                        <option value="featured">Destacados</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="newest">Más Recientes</option>
+                        <option value="rating">Mejor Valorados</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="material">Material:</label>
+                    <select id="material" class="filter-select">
+                        <option value="all">Todos los materiales</option>
+                        <option value="oro">Oro 18k</option>
+                        <option value="plata">Plata 925</option>
+                        <option value="acero">Acero Inoxidable</option>
+                        <option value="cuero">Cuero Genuino</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card reveal" data-category="anillos" data-price="15500" data-material="oro" data-rating="4.8">
+                <div class="product-image-container">
+                    <img src="assets/images/products/anillo-elegance-gold.svg" alt="Anillo Elegance Gold - Oro 18k" class="product-image" loading="lazy">
+                    <div class="product-badge new">Nuevo</div>
+                    <div class="product-actions">
+                        <button class="quick-view-btn" aria-label="Vista rápida">👁️</button>
+                        <button class="favorite-btn" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Anillo Elegance Gold</h3>
+                    <p class="product-description">Diseño minimalista con acabados en oro de 18k, perfecto para cualquier ocasión. Elaborado a mano por artesanos especializados.</p>
+                    <div class="product-details">
+                        <span class="material-tag">Oro 18k</span>
+                        <span class="availability in-stock">En Stock</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$155.00</span>
+                        <span class="original-price">$185.00</span>
+                        <span class="discount">-16%</span>
+                    </div>
+                    <div class="product-colors">
+                        <div class="color-option color-gold active" data-label="Oro"></div>
+                        <div class="color-option color-black" data-label="Negro"></div>
+                        <div class="color-option color-white" data-label="Blanco"></div>
+                    </div>
+                    <div class="product-sizes">
+                        <span class="size-label">Talla:</span>
+                        <div class="size-options">
+                            <button class="size-option" data-size="S">S</button>
+                            <button class="size-option active" data-size="M">M</button>
+                            <button class="size-option" data-size="L">L</button>
+                        </div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+            <div class="product-card reveal" data-category="collares" data-price="22800" data-material="bronce" data-rating="4.6">
+                <div class="product-image-container">
+                    <img src="assets/images/products/collar-venetian-dreams.svg" alt="Collar Venetian Dreams - Bronce y piedras naturales" class="product-image" loading="lazy">
+                    <div class="product-badge bestseller">Bestseller</div>
+                    <div class="product-actions">
+                        <button class="quick-view-btn" aria-label="Vista rápida">👁️</button>
+                        <button class="favorite-btn" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Collar Venetian Dreams</h3>
+                    <p class="product-description">Cadena artesanal con piedras naturales y detalles en bronce envejecido. Inspirado en la elegancia veneciana clásica.</p>
+                    <div class="product-details">
+                        <span class="material-tag">Bronce</span>
+                        <span class="availability low-stock">Pocas unidades</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$228.00</span>
+                    </div>
+                    <div class="product-colors">
+                        <div class="color-option color-brown active" data-label="Marrón"></div>
+                        <div class="color-option color-gold" data-label="Oro"></div>
+                        <div class="color-option color-black" data-label="Negro"></div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card reveal" data-category="bolsos" data-price="35000" data-material="cuero" data-rating="4.9">
+                <div class="product-image-container">
+                    <img src="assets/images/products/bolso-midnight-luxury.svg" alt="Bolso Midnight Luxury - Cuero italiano" class="product-image" loading="lazy">
+                    <div class="product-badge premium">Premium</div>
+                    <div class="product-actions">
+                        <button class="quick-view-btn" aria-label="Vista rápida">👁️</button>
+                        <button class="favorite-btn" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Bolso Midnight Luxury</h3>
+                    <p class="product-description">Bolso de lujo confeccionado en cuero italiano de primera calidad. Diseño atemporal con herrajes dorados.</p>
+                    <div class="product-details">
+                        <span class="material-tag">Cuero Italiano</span>
+                        <span class="availability in-stock">En Stock</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$350.00</span>
+                    </div>
+                    <div class="product-colors">
+                        <div class="color-option color-black active" data-label="Negro"></div>
+                        <div class="color-option color-brown" data-label="Marrón"></div>
+                        <div class="color-option color-cream" data-label="Crema"></div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card reveal" data-category="relojes" data-price="42500" data-material="acero" data-rating="4.7">
+                <div class="product-image-container">
+                    <img src="assets/images/products/reloj-cosmos-edition.svg" alt="Reloj Cosmos Edition - Acero inoxidable" class="product-image" loading="lazy">
+                    <div class="product-badge limited">Edición Limitada</div>
+                    <div class="product-actions">
+                        <button class="quick-view-btn" aria-label="Vista rápida">👁️</button>
+                        <button class="favorite-btn" aria-label="Añadir a favoritos">♡</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Reloj Cosmos Edition</h3>
+                    <p class="product-description">Reloj automático suizo con caja de acero inoxidable y movimiento visible. Edición limitada a 100 piezas.</p>
+                    <div class="product-details">
+                        <span class="material-tag">Acero Inoxidable</span>
+                        <span class="availability limited">Solo 3 disponibles</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$425.00</span>
+                    </div>
+                    <div class="product-colors">
+                        <div class="color-option color-silver active" data-label="Plata"></div>
+                        <div class="color-option color-black" data-label="Negro"></div>
+                        <div class="color-option color-gold" data-label="Oro"></div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+            <div class="product-card reveal">
+                <div class="product-image">👜</div>
+                <div class="product-info">
+                    <h3>Bolso London Heritage</h3>
+                    <p>Cartera de cuero genuino con herrajes dorados y compartimentos funcionales.</p>
+                    <div class="product-price">$45.900</div>
+                    <div class="product-colors">
+                        <div class="color-option color-black"></div>
+                        <div class="color-option color-brown"></div>
+                        <div class="color-option color-white"></div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image">⌚</div>
+                <div class="product-info">
+                    <h3>Reloj Ihara Classic</h3>
+                    <p>Reloj de pulsera con movimiento suizo y correa de cuero artesanal.</p>
+                    <div class="product-price">$38.500</div>
+                    <div class="product-colors">
+                        <div class="color-option color-black"></div>
+                        <div class="color-option color-brown"></div>
+                        <div class="color-option color-gold"></div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image">🕶️</div>
+                <div class="product-info">
+                    <h3>Gafas Metropolitan</h3>
+                    <p>Lentes de sol con marcos acetato premium y cristales polarizados.</p>
+                    <div class="product-price">$28.700</div>
+                    <div class="product-colors">
+                        <div class="color-option color-black"></div>
+                        <div class="color-option color-brown"></div>
+                        <div class="color-option color-gold"></div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-image">🎀</div>
+                <div class="product-info">
+                    <h3>Pañuelo Silk Romance</h3>
+                    <p>Pañuelo de seda natural con estampado exclusivo y bordes enrollados a mano.</p>
+                    <div class="product-price">$12.300</div>
+                    <div class="product-colors">
+                        <div class="color-option color-gold"></div>
+                        <div class="color-option color-brown"></div>
+                        <div class="color-option color-white"></div>
+                    </div>
+                    <button class="add-to-cart">
+                        <span>Agregar al Carrito</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Galería Section -->
+    <section class="gallery" id="galeria">
+        <h2 class="section-title reveal">Galería</h2>
+        <div class="gallery-slider" aria-label="Galería de productos exclusivos">
+                <button class="gallery-toggle-play" aria-label="Pausar reproducción automática" data-state="playing">❚❚</button>
+            <div class="gallery-slide active" data-index="0">
+                <img class="lazy-blur" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMUExQTFBIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNDAiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iMzAiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEzNSIgcj0iNCIgZmlsbD0iI0Q0QUYzNyIvPgo8dGV4dCB4PSIyMDAiIHk9IjIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0Q0QUYzNyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIj5BbmlsbG8gZGUgT3JvPC90ZXh0Pgo8L3N2Zz4=" data-full="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQwMCIgaGVpZ2h0PSIxMDUwIiB2aWV3Qm94PSIwIDAgMTQwMCAxMDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTQwMCIgaGVpZ2h0PSIxMDUwIiBmaWxsPSIjMUExQTFBIi8+CjxjaXJjbGUgY3g9IjcwMCIgY3k9IjUyNSIgcj0iMTQwIiBzdHJva2U9IiNENEFGMzciIHN0cm9rZS13aWR0aD0iMTQiIGZpbGw9Im5vbmUiLz4KPGNpcmNsZSBjeD0iNzAwIiBjeT0iNTI1IiByPSIxMDUiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIi8+CjxjaXJjbGUgY3g9IjcwMCIgY3k9IjQ3MyIgcj0iMTQiIGZpbGw9IiNENEFGMzciLz4KPHRleHQgeD0iNzAwIiB5PSI4MDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNENEFGMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MiI+QW5pbGxvIGRlIE9ybzwvdGV4dD4KPC9zdmc+" alt="Anillo dorado minimalista sobre fondo negro" loading="lazy"/>
+                <div class="gallery-overlay"><h3>Brillo Atemporal</h3><p>Oro que captura la luz y la mirada.</p><button class="gallery-cta" data-product="Anillo">Ver Producto</button></div>
+            </div>
+            <div class="gallery-slide" data-index="1">
+                <img class="lazy-blur" src="https://images.unsplash.com/photo-1600185365483-26d7a4cf9b04?auto=format&fit=crop&w=400&q=30" data-full="https://images.unsplash.com/photo-1600185365483-26d7a4cf9b04?auto=format&fit=crop&w=1400&q=80" alt="Collar de lujo con piedras sobre terciopelo" loading="lazy"/>
+                <div class="gallery-overlay"><h3>Detalle Artesanal</h3><p>Piedras seleccionadas a mano.</p><button class="gallery-cta" data-product="Collar">Ver Producto</button></div>
+            </div>
+            <div class="gallery-slide" data-index="2">
+                <img class="lazy-blur" src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=30" data-full="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1400&q=80" alt="Bolso de cuero premium en iluminación dramática" loading="lazy"/>
+                <div class="gallery-overlay"><h3>Cuero Noble</h3><p>Textura, carácter y elegancia.</p><button class="gallery-cta" data-product="Bolso">Ver Producto</button></div>
+            </div>
+            <div class="gallery-slide" data-index="3">
+                <img class="lazy-blur" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNDAiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+CjxsaW5lIHgxPSIyMDAiIHkxPSIxMTAiIHgyPSIyMDAiIHkyPSIxNTAiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxsaW5lIHgxPSIyMDAiIHkxPSIxNTAiIHgyPSIyMzAiIHkyPSIxNTAiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjE2MCIgeT0iMTkwIiB3aWR0aD0iODAiIGhlaWdodD0iMTIiIHJ4PSI2IiBmaWxsPSIjOEI0NTEzIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNzQ3NDc0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiPlJlbG9qIGRlIEx1am88L3RleHQ+Cjwvc3ZnPg==" data-full="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQwMCIgaGVpZ2h0PSIxMDUwIiB2aWV3Qm94PSIwIDAgMTQwMCAxMDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTQwMCIgaGVpZ2h0PSIxMDUwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjcwMCIgY3k9IjUyNSIgcj0iMTQwIiBzdHJva2U9IiNENEFGMzciIHN0cm9rZS13aWR0aD0iMTAiIGZpbGw9Im5vbmUiLz4KPGxpbmUgeDE9IjcwMCIgeTE9IjM4NSIgeDI9IjcwMCIgeTI9IjUyNSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEwIi8+CjxsaW5lIHgxPSI3MDAiIHkxPSI1MjUiIHgyPSI4NDAiIHkyPSI1MjUiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSI3Ii8+CjxyZWN0IHg9IjU2MCIgeT0iNjY1IiB3aWR0aD0iMjgwIiBoZWlnaHQ9IjQyIiByeD0iMjEiIGZpbGw9IiM4QjQ1MTMiLz4KPHRleHQgeD0iNzAwIiB5PSI4MDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3NDc0NzQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MiI+UmVsb2ogZGUgTHVqbzwvdGV4dD4KPC9zdmc+" alt="Reloj clásico con correa de cuero" loading="lazy"/>
+                <div class="gallery-overlay"><h3>Precisión Suiza</h3><p>El tiempo elevado a arte.</p><button class="gallery-cta" data-product="Reloj">Ver Producto</button></div>
+            </div>
+            <div class="gallery-slide" data-index="4">
+                <img class="lazy-blur" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMkEyQTJBIi8+CjxlbGxpcHNlIGN4PSIxNDAiIGN5PSIxNTAiIHJ4PSI0MCIgcnk9IjM1IiBzdHJva2U9IiNENEFGMzciIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIvPgo8ZWxsaXBzZSBjeD0iMjYwIiBjeT0iMTUwIiByeD0iNDAiIHJ5PSIzNSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiLz4KPGxpbmUgeDE9IjE4MCIgeTE9IjE1MCIgeDI9IjIyMCIgeTI9IjE1MCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjMiLz4KPGxpbmUgeDE9IjEwMCIgeTE9IjE1NSIgeDI9IjEyMCIgeTI9IjE3MCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjMiLz4KPGxpbmUgeDE9IjMwMCIgeTE9IjE1NSIgeDI9IjI4MCIgeTI9IjE3MCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjMiLz4KPHRleHQgeD0iMjAwIiB5PSIyMzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNENEFGMzciIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+R2FmYXMgZGUgTHVqbzwvdGV4dD4KPC9zdmc+" data-full="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQwMCIgaGVpZ2h0PSIxMDUwIiB2aWV3Qm94PSIwIDAgMTQwMCAxMDUwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTQwMCIgaGVpZ2h0PSIxMDUwIiBmaWxsPSIjMkEyQTJBIi8+CjxlbGxpcHNlIGN4PSI0OTAiIGN5PSI1MjUiIHJ4PSIxNDAiIHJ5PSIxMjIiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSIxMCIgZmlsbD0ibm9uZSIvPgo8ZWxsaXBzZSBjeD0iOTEwIiBjeT0iNTI1IiByeD0iMTQwIiByeT0iMTIyIiBzdHJva2U9IiNENEFGMzciIHN0cm9rZS13aWR0aD0iMTAiIGZpbGw9Im5vbmUiLz4KPGxpbmUgeDE9IjYzMCIgeTE9IjUyNSIgeDI9Ijc3MCIgeTI9IjUyNSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEwIi8+CjxsaW5lIHgxPSIzNTAiIHkxPSI1NDMiIHgyPSI0MjAiIHkyPSI1OTUiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLXdpZHRoPSIxMCIvPgo8bGluZSB4MT0iMTA1MCIgeTE9IjU0MyIgeDI9Ijk4MCIgeTI9IjU5NSIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEwIi8+Cjx0ZXh0IHg9IjcwMCIgeT0iODA1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRDRBRjM3IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDIiPkdhZmFzIGRlIEx1am88L3RleHQ+Cjwvc3ZnPg==" alt="Gafas exclusivas en mesa oscura" loading="lazy"/>
+                <div class="gallery-overlay"><h3>Mirada Icónica</h3><p>Actitud y sofisticación.</p><button class="gallery-cta" data-product="Gafas">Ver Producto</button></div>
+            </div>
+            <button class="gallery-nav prev" aria-label="Anterior">‹</button>
+            <button class="gallery-nav next" aria-label="Siguiente">›</button>
+            <div class="gallery-dots" role="tablist" aria-label="Selector de diapositivas"></div>
+        </div>
+    </section>
+
+    <!-- Se eliminó la sección de favoritos en página (sidebar manejará favoritos) -->
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-content">
+            <h2>Suscríbete a Nuestras Novedades</h2>
+            <p>Sé el primero en conocer nuestras nuevas colecciones y ofertas exclusivas</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section-full-width">
+        <div class="contact-full-container">
+            <div class="contact-header-full">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">Estamos aquí para ayudarte con cualquier consulta</p>
+            </div>
+            
+            <div class="contact-info-grid-full">
+                <div class="contact-info-card">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-content">
+                        <h3>Showroom Principal</h3>
+                        <p>Ituzaingó 562</p>
+                        <p>San Cristóbal, Santa Fe</p>
+                        <p>Argentina</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-content">
+                        <h3>Atención al Cliente</h3>
+                        <p>+54 9 3492 61-3004</p>
+                        <p class="contact-hours-text">Lun-Vie: 9:00-18:00h</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-content">
+                        <h3>Email</h3>
+                        <p>info@iharalondon.com</p>
+                        <p class="response-time">Respuesta en 24 horas</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-content">
+                        <h3>Redes Sociales</h3>
+                        <div class="social-links-compact">
+                            <a href="#" class="social-link-compact">Instagram</a>
+                            <a href="#" class="social-link-compact">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-cta-section">
+                <div class="contact-form-inline">
+                    <h3>¿Necesitas asesoramiento personalizado?</h3>
+                    <form class="inline-contact-form" id="inlineContactForm">
+                        <div class="inline-form-group">
+                            <input type="text" placeholder="Tu nombre" required>
+                            <input type="email" placeholder="Tu email" required>
+                            <input type="tel" placeholder="Tu teléfono">
+                        </div>
+                        <div class="inline-form-message">
+                            <textarea placeholder="¿En qué podemos ayudarte?" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="inline-submit-btn">
+                            <span>Enviar Consulta</span>
+                            <span class="btn-icon">📤</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-map-section">
+                <h3>📍 Visítanos en Nuestro Showroom</h3>
+                <div class="map-info-container">
+                    <div class="map-details">
+                        <div class="address-card">
+                            <h4>Dirección Completa</h4>
+                            <p class="address-main">Ituzaingó 562</p>
+                            <p class="address-city">San Cristóbal, Santa Fe</p>
+                            <p class="address-country">Argentina</p>
+                        </div>
+                        <div class="map-actions">
+                            <a href="https://www.google.com/maps/search/Ituzaingo+562,+San+Cristobal,+Santa+Fe,+Argentina" target="_blank" class="map-link-btn">
+                                <span class="map-icon">🗺️</span>
+                                <span>Ver en Google Maps</span>
+                            </a>
+                            <a href="https://maps.apple.com/?q=Ituzaingo+562,+San+Cristobal,+Santa+Fe,+Argentina" target="_blank" class="map-link-btn">
+                                <span class="map-icon">📍</span>
+                                <span>Abrir en Apple Maps</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="map-visual">
+                        <div class="map-placeholder-enhanced">
+                            <div class="map-background"></div>
+                            <div class="map-content">
+                                <div class="map-pin">📍</div>
+                                <p class="map-text">Ihara & London Showroom</p>
+                                <p class="map-address">Ituzaingó 562, San Cristóbal</p>
+                                <p class="map-directions">Haz clic para obtener direcciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <h3>Ihara & London</h3>
+                    <p class="footer-tagline">Elegancia Atemporal en Cada Detalle</p>
+                </div>
+                <p class="footer-description">Desde 1995, creamos accesorios premium que combinan tradición artesanal con diseño contemporáneo. Cada pieza cuenta una historia única de sofisticación y estilo.</p>
+                <div class="footer-certifications">
+                    <span class="cert-badge-small">SSL Seguro</span>
+                    <span class="cert-badge-small">Garantía 2 Años</span>
+                    <span class="cert-badge-small">Comercio Ético</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Compra</h4>
+                <ul class="footer-links">
+                    <li><a href="#productos">Todos los Productos</a></li>
+                    <li><a href="#productos" data-category="anillos">Anillos</a></li>
+                    <li><a href="#productos" data-category="collares">Collares</a></li>
+                    <li><a href="#productos" data-category="bolsos">Bolsos</a></li>
+                    <li><a href="#productos" data-category="relojes">Relojes</a></li>
+                    <li><a href="#gift-cards">Tarjetas Regalo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Ayuda</h4>
+                <ul class="footer-links">
+                    <li><a href="#size-guide">Guía de Tallas</a></li>
+                    <li><a href="#shipping">Envíos y Entregas</a></li>
+                    <li><a href="#returns">Cambios y Devoluciones</a></li>
+                    <li><a href="#care">Cuidado de Productos</a></li>
+                    <li><a href="#warranty">Garantía</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Empresa</h4>
+                <ul class="footer-links">
+                    <li><a href="#sustainability">Sostenibilidad</a></li>
+                    <li><a href="#careers">Únete al Equipo</a></li>
+                    <li><a href="#press">Prensa</a></li>
+                    <li><a href="#wholesale">Ventas Mayoristas</a></li>
+                    <li><a href="#affiliates">Programa de Afiliados</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Blog Section -->
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Blog & Tendencias</h2>
+                    <p class="section-subtitle">Descubre las últimas tendencias en joyería y consejos de estilo</p>
+                </div>
+                
+                <div class="blog-grid">
+                    <article class="blog-card featured">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80" alt="Tendencias joyería 2025" loading="lazy">
+                            <div class="blog-category">Tendencias</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <time datetime="2025-08-25">25 de Agosto, 2025</time>
+                                <span>•</span>
+                                <span>5 min lectura</span>
+                            </div>
+                            <h3 class="blog-title">Las 5 Tendencias de Joyería que Dominarán 2025</h3>
+                            <p class="blog-excerpt">Desde los diseños minimalistas hasta las piezas statement, descubre qué estilos marcarán pauta este año en el mundo de la joyería premium.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Tendencias</span>
+                                <span class="tag">Joyería</span>
+                                <span class="tag">2025</span>
+                            </div>
+                            <a href="#" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80" alt="Cuidado de joyas" loading="lazy">
+                            <div class="blog-category">Cuidados</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <time datetime="2025-08-20">20 de Agosto, 2025</time>
+                                <span>•</span>
+                                <span>3 min lectura</span>
+                            </div>
+                            <h3 class="blog-title">Cómo Mantener Tus Joyas Como Nuevas</h3>
+                            <p class="blog-excerpt">Guía completa para el cuidado y mantenimiento de tus piezas de joyería más preciadas.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Cuidados</span>
+                                <span class="tag">Consejos</span>
+                            </div>
+                            <a href="#" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1549670012-d0bf2cc2113b?auto=format&fit=crop&w=600&q=80" alt="Guía de regalos" loading="lazy">
+                            <div class="blog-category">Guías</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <time datetime="2025-08-15">15 de Agosto, 2025</time>
+                                <span>•</span>
+                                <span>4 min lectura</span>
+                            </div>
+                            <h3 class="blog-title">Guía Definitiva para Elegir el Regalo Perfecto</h3>
+                            <p class="blog-excerpt">Consejos de expertos para seleccionar la joya ideal según la personalidad y ocasión.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Regalos</span>
+                                <span class="tag">Guías</span>
+                            </div>
+                            <a href="#" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" alt="Historia joyería" loading="lazy">
+                            <div class="blog-category">Historia</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <time datetime="2025-08-10">10 de Agosto, 2025</time>
+                                <span>•</span>
+                                <span>6 min lectura</span>
+                            </div>
+                            <h3 class="blog-title">El Arte Milenario de la Joyería: Un Viaje en el Tiempo</h3>
+                            <p class="blog-excerpt">Explora la fascinante historia de la joyería desde las civilizaciones antiguas hasta nuestros días.</p>
+                            <div class="blog-tags">
+                                <span class="tag">Historia</span>
+                                <span class="tag">Arte</span>
+                            </div>
+                            <a href="#" class="blog-link">Leer más →</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="blog-footer">
+                    <a href="#" class="view-all-btn">Ver Todos los Artículos</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Preguntas Frecuentes</h2>
+                    <p class="section-subtitle">Encuentra respuestas a las consultas más comunes</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-categories">
+                        <button class="faq-category-btn active" data-category="general">General</button>
+                        <button class="faq-category-btn" data-category="shipping">Envíos</button>
+                        <button class="faq-category-btn" data-category="returns">Devoluciones</button>
+                        <button class="faq-category-btn" data-category="care">Cuidados</button>
+                        <button class="faq-category-btn" data-category="sizing">Talles</button>
+                    </div>
+                    
+                    <div class="faq-content">
+                        <div class="faq-category-content active" data-category="general">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿Cuál es la calidad de sus materiales?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Utilizamos únicamente materiales premium: oro 18k, plata 925 sterling, piedras preciosas naturales certificadas y perlas cultivadas de alta calidad. Cada pieza incluye certificado de autenticidad.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿Ofrecen garantía en sus productos?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Sí, ofrecemos garantía de 2 años contra defectos de fabricación en todas nuestras joyas. También incluimos servicio de mantenimiento gratuito durante el primer año.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿Realizan trabajos personalizados?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Absolutamente. Ofrecemos servicios de personalización incluyendo grabados, ajuste de talles, y diseños completamente únicos. Contacta a nuestro equipo para una consulta personalizada.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-category-content" data-category="shipping">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿Cuánto tiempo tarda el envío?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Envíos nacionales: 24-48 horas. Envíos internacionales: 3-7 días hábiles. Todos los envíos incluyen seguro completo y tracking en tiempo real.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿El envío es gratuito?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Sí, ofrecemos envío gratuito en compras superiores a $50. Para pedidos menores, el costo de envío es de $5 nacional y $15 internacional.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-category-content" data-category="returns">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿Cuál es su política de devoluciones?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Aceptamos devoluciones hasta 30 días después de la compra. Las piezas deben estar en condición original con todas las etiquetas y certificados. Proceso 100% gratuito.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-category-content" data-category="care">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿Cómo debo cuidar mis joyas?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Recomendamos limpiar las piezas con un paño suave, guardarlas por separado en nuestras cajas especiales, y evitar contacto con perfumes o productos químicos. Incluimos kit de limpieza gratuito.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-category-content" data-category="sizing">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>¿Cómo puedo saber mi talla de anillo?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Puedes usar nuestra guía de talles interactiva en cada producto, o visitar nuestro showroom para una medición profesional gratuita. También ofrecemos ajustes posteriores sin costo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Reseñas en el Footer -->
+        <div class="footer-reviews-section-full-width">
+            <div class="container">
+                <button id="toggleReviews" class="reviews-toggle-btn">
+                    <span class="icon">⭐</span>
+                    <span class="text">Ver Reseñas de Clientes</span>
+                    <span class="arrow">▼</span>
+                </button>
+                
+                <div id="reviewsDropdown" class="reviews-dropdown">
+                    <div class="reviews-header">
+                        <div class="reviews-summary">
+                            <div class="overall-rating">
+                                <div class="rating-number">4.8</div>
+                                <div class="overall-stars">★★★★★</div>
+                                <div class="total-reviews">Basado en 284 reseñas</div>
+                            </div>
+                            <div class="rating-breakdown">
+                                <div class="rating-bar">
+                                    <span>5★</span>
+                                    <div class="bar"><div class="fill" style="width: 75%"></div></div>
+                                    <span>212</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4★</span>
+                                    <div class="bar"><div class="fill" style="width: 18%"></div></div>
+                                    <span>51</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3★</span>
+                                    <div class="bar"><div class="fill" style="width: 5%"></div></div>
+                                    <span>14</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2★</span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span>4</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1★</span>
+                                    <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                                    <span>3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reviews-filters">
+                        <button class="filter-btn active" data-filter="all">Todas las reseñas</button>
+                        <button class="filter-btn" data-filter="5">5 estrellas</button>
+                        <button class="filter-btn" data-filter="4">4 estrellas</button>
+                        <button class="filter-btn" data-filter="verified">Compra verificada</button>
+                        <button class="filter-btn" data-filter="photos">Con fotos</button>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        <div class="review-item" data-verified="true" data-photos="true">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="author-avatar">M</div>
+                                    <div class="author-details">
+                                        <h4>María Elena R.</h4>
+                                        <div class="verified-badge">✓ Compra verificada</div>
+                                    </div>
+                                </div>
+                                <div class="review-date">Hace 2 días</div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <h5 class="review-title">Calidad excepcional</h5>
+                            <p class="review-text">El anillo es hermoso, exactamente como se ve en las fotos. La calidad del oro es excelente y el acabado perfecto. Lo recomiendo totalmente.</p>
+                            <div class="review-photos">
+                                <div class="photo-placeholder">📷</div>
+                                <div class="photo-placeholder">📷</div>
+                            </div>
+                            <div class="review-actions">
+                                <button class="helpful-btn">👍 Útil (12)</button>
+                                <button class="report-btn">⚠️ Reportar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="review-item" data-verified="true">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="author-avatar">C</div>
+                                    <div class="author-details">
+                                        <h4>Carlos M.</h4>
+                                        <div class="verified-badge">✓ Compra verificada</div>
+                                    </div>
+                                </div>
+                                <div class="review-date">Hace 1 semana</div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">★★★★★</div>
+                            </div>
+                            <h5 class="review-title">Servicio impecable</h5>
+                            <p class="review-text">Compré el collar para mi esposa y quedó encantada. El empaque es muy elegante y la entrega fue súper rápida. Definitivamente volveré a comprar.</p>
+                            <div class="review-actions">
+                                <button class="helpful-btn">👍 Útil (8)</button>
+                                <button class="report-btn">⚠️ Reportar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="review-item" data-verified="true">
+                            <div class="review-header">
+                                <div class="review-author">
+                                    <div class="author-avatar">L</div>
+                                    <div class="author-details">
+                                        <h4>Laura S.</h4>
+                                        <div class="verified-badge">✓ Compra verificada</div>
+                                    </div>
+                                </div>
+                                <div class="review-date">Hace 2 semanas</div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                            <h5 class="review-title">Muy buena relación calidad-precio</h5>
+                            <p class="review-text">El bolso es precioso y muy funcional. La única razón por la que no le doy 5 estrellas es porque tardó un poco más de lo esperado en llegar, pero valió la pena la espera.</p>
+                            <div class="review-actions">
+                                <button class="helpful-btn">👍 Útil (5)</button>
+                                <button class="report-btn">⚠️ Reportar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Write Review Section - Always Visible -->
+                <div class="write-review-section">
+                    <button class="write-review-btn">
+                        <span class="icon">✍️</span>
+                        <span>Escribir una reseña</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-legal">
+                    <p>&copy; 2025 Ihara & London. Todos los derechos reservados.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Política de Privacidad</a>
+                        <a href="#terms">Términos y Condiciones</a>
+                        <a href="#cookies">Política de Cookies</a>
+                    </div>
+                </div>
+                
+                <div class="payment-methods">
+                    <span class="payment-label">Métodos de pago seguros:</span>
+                    <div class="payment-icons">
+                        <span class="payment-icon visa">💳</span>
+                        <span class="payment-icon mastercard">💳</span>
+                        <span class="payment-icon bank-transfer">🏦</span>
+                    </div>
+                </div>
+                
+                <div class="footer-credits">
+                    <p>Desarrollado por <strong>Copes Jesús</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Sidebar Carrito -->
+    <aside id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button id="closeCart" class="close-cart" aria-label="Cerrar">✕</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row"><span>Subtotal</span><span id="cartTotalAmount">$0.00</span></div>
+            <button id="checkoutBtn" class="checkout-btn">Iniciar Compra</button>
+            <button class="continue-shopping" onclick="document.getElementById('cartSidebar').classList.remove('active')">Seguir Comprando</button>
+        </div>
+    </aside>
+
+    <!-- Modal Checkout -->
+    <div id="checkoutModal" class="checkout-modal" aria-hidden="true">
+        <div class="checkout-content">
+            <button id="closeCheckout" class="close-checkout" aria-label="Cerrar">✕</button>
+            <div class="checkout-steps">
+                <div class="progress-bar-wrap"><div class="progress-bar" id="checkoutProgress"></div></div>
+                <!-- Paso 1: Envío -->
+                <div class="checkout-step" data-step="1">
+                    <h4 class="section-title">Método de Entrega</h4>
+                    <div class="option-grid">
+                        <label class="option-tile">
+                            <input type="radio" name="shipping" value="pickup"> Retiro en tienda (Gratis)
+                        </label>
+                        <label class="option-tile">
+                            <input type="radio" name="shipping" value="delivery"> Envío a domicilio ($500)
+                        </label>
+                    </div>
+                    <div id="shippingAddress" class="inline-fields hidden" style="margin-top:1rem;">
+                        <div class="field"><label>Dirección</label><input id="address" type="text" placeholder="Calle y número"></div>
+                        <div class="field"><label>Ciudad</label><input id="city" type="text" placeholder="Ciudad"></div>
+                        <div class="field"><label>Código Postal</label><input id="postalCode" type="text" placeholder="CP"></div>
+                    </div>
+                </div>
+                <!-- Paso 2: Contacto -->
+                <div class="checkout-step" data-step="2">
+                    <h4 class="section-title">Datos de Contacto</h4>
+                    <div class="inline-fields">
+                        <div class="field"><label>Nombre</label><input id="name" type="text" placeholder="Tu nombre"></div>
+                        <div class="field"><label>Email</label><input id="email" type="email" placeholder="correo@ejemplo.com"></div>
+                        <div class="field"><label>Teléfono</label><input id="phone" type="tel" placeholder="Número"></div>
+                    </div>
+                </div>
+                <!-- Paso 3: Pago -->
+                <div class="checkout-step" data-step="3">
+                    <h4 class="section-title">Método de Pago</h4>
+                    <p class="payment-subtitle">Elige tu método de pago preferido. Todos los pagos son 100% seguros.</p>
+                    
+                    <div class="payment-methods-grid">
+                        <!-- Mercado Pago -->
+                        <label class="payment-option mercadopago">
+                            <input type="radio" name="payment" value="mercadopago">
+                            <div class="payment-content">
+                                <div class="payment-logo">
+                                    <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/logo_small@2x.png" alt="Mercado Pago" width="120">
+                                </div>
+                                <div class="payment-info">
+                                    <h5>Mercado Pago</h5>
+                                    <p>Paga con tarjeta, efectivo o dinero en cuenta</p>
+                                    <div class="payment-benefits">
+                                        <span class="benefit">✓ Hasta 12 cuotas</span>
+                                        <span class="benefit">✓ Protección al comprador</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Tarjetas de Crédito/Débito -->
+                        <label class="payment-option cards">
+                            <input type="radio" name="payment" value="card">
+                            <div class="payment-content">
+                                <div class="payment-logos">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/100px-Visa_Inc._logo.svg.png" alt="Visa" width="40">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/100px-Mastercard-logo.svg.png" alt="Mastercard" width="40">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/100px-American_Express_logo_%282018%29.svg.png" alt="American Express" width="40">
+                                </div>
+                                <div class="payment-info">
+                                    <h5>Tarjeta de Crédito/Débito</h5>
+                                    <p>Visa, Mastercard, American Express</p>
+                                    <div class="payment-benefits">
+                                        <span class="benefit">✓ Pago inmediato</span>
+                                        <span class="benefit">✓ SSL Seguro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Efectivo -->
+                        <label class="payment-option cash">
+                            <input type="radio" name="payment" value="cash">
+                            <div class="payment-content">
+                                <div class="payment-logo cash-icon">💵</div>
+                                <div class="payment-info">
+                                    <h5>Efectivo</h5>
+                                    <p id="cashDescription">RapiPago, PagoFácil, Pago Mis Cuentas</p>
+                                    <div class="payment-benefits" id="cashBenefits">
+                                        <span class="benefit">✓ Sin comisiones</span>
+                                        <span class="benefit">✓ 48hs para pagar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Transferencia Bancaria -->
+                        <label class="payment-option transfer">
+                            <input type="radio" name="payment" value="transfer">
+                            <div class="payment-content">
+                                <div class="payment-logo bank-icon">🏦</div>
+                                <div class="payment-info">
+                                    <h5>Transferencia Bancaria</h5>
+                                    <p>CBU o Alias bancario</p>
+                                    <div class="payment-benefits">
+                                        <span class="benefit">✓ Sin comisiones</span>
+                                        <span class="benefit">✓ 10% descuento</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        
+                    </div>
+
+                    <!-- Formularios específicos por método de pago -->
+                    
+                    <!-- Formulario Mercado Pago -->
+                    <div id="mercadopagoForm" class="payment-form hidden">
+                        <div class="payment-form-header">
+                            <h5>Continuar con Mercado Pago</h5>
+                            <p>Serás redirigido a Mercado Pago para completar tu compra de forma segura.</p>
+                        </div>
+                        <div class="mercadopago-options">
+                            <div class="mp-option">
+                                <input type="radio" name="mp-method" value="credit-card" id="mp-credit">
+                                <label for="mp-credit">
+                                    <span class="mp-icon">💳</span>
+                                    <span>Tarjeta de crédito - Hasta 12 cuotas</span>
+                                </label>
+                            </div>
+                            <div class="mp-option">
+                                <input type="radio" name="mp-method" value="debit-card" id="mp-debit">
+                                <label for="mp-debit">
+                                    <span class="mp-icon">💳</span>
+                                    <span>Tarjeta de débito</span>
+                                </label>
+                            </div>
+                            <div class="mp-option">
+                                <input type="radio" name="mp-method" value="cash" id="mp-cash">
+                                <label for="mp-cash">
+                                    <span class="mp-icon">💵</span>
+                                    <span>Efectivo (RapiPago, PagoFácil)</span>
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Formulario Tarjeta -->
+                    <div id="cardForm" class="payment-form hidden">
+                        <div class="payment-form-header">
+                            <h5>Datos de la Tarjeta</h5>
+                            <div class="security-badges">
+                                <span class="security-badge">🔒 SSL Seguro</span>
+                                <span class="security-badge">🛡️ PCI Compliant</span>
+                            </div>
+                        </div>
+                        <div class="card-form-fields">
+                            <div class="field full-width">
+                                <label>Número de Tarjeta</label>
+                                <input id="cardNumber" type="text" maxlength="19" placeholder="1234 5678 9012 3456" class="card-input">
+                                <div class="card-icons">
+                                    <span class="card-type" id="cardType"></span>
+                                </div>
+                            </div>
+                            <div class="field-row">
+                                <div class="field">
+                                    <label>Vencimiento</label>
+                                    <input id="cardExpiry" type="text" placeholder="MM/AA" maxlength="5">
+                                </div>
+                                <div class="field">
+                                    <label>Código de Seguridad</label>
+                                    <input id="cardCVC" type="text" maxlength="4" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="field full-width">
+                                <label>Nombre del Titular</label>
+                                <input id="cardHolder" type="text" placeholder="Como aparece en la tarjeta">
+                            </div>
+                            <div class="field-row">
+                                <div class="field">
+                                    <label>DNI del Titular</label>
+                                    <input id="cardDNI" type="text" placeholder="12345678">
+                                </div>
+                                <div class="field">
+                                    <label>Cuotas</label>
+                                    <select id="installments">
+                                        <option value="1">1 cuota sin interés</option>
+                                        <option value="3">3 cuotas sin interés</option>
+                                        <option value="6">6 cuotas sin interés</option>
+                                        <option value="12">12 cuotas con interés</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Información Efectivo -->
+                    <div id="cashInfo" class="payment-form hidden">
+                        <div class="payment-form-header">
+                            <h5>Pago en Efectivo</h5>
+                        </div>
+                        <!-- Retiro en tienda: pagar en el local -->
+                        <div id="cashPickup" class="cash-mode hidden">
+                            <p>Abona en efectivo al retirar tu pedido en el local.</p>
+                            <ul>
+                                <li>Dirección: Av. Principal 123, CABA</li>
+                                <li>Horario: Lun a Vie 10:00–18:00</li>
+                                <li>Reserva: Mantendremos tu reserva por 48 horas.</li>
+                            </ul>
+                        </div>
+                        <!-- Envío a domicilio: cupón en RapiPago/PagoFácil -->
+                        <div id="cashDelivery" class="cash-mode hidden">
+                            <p>Después de confirmar tu pedido, recibirás un cupón para pagar en:</p>
+                            <div class="cash-locations">
+                                <div class="cash-location">
+                                    <img src="https://seeklogo.com/images/R/rapipago-logo-C2B1A4E16F-seeklogo.com.png" alt="RapiPago" width="80">
+                                    <span>RapiPago</span>
+                                </div>
+                                <div class="cash-location">
+                                    <img src="https://seeklogo.com/images/P/pago-facil-logo-5B5A1F1B93-seeklogo.com.png" alt="PagoFácil" width="80">
+                                    <span>PagoFácil</span>
+                                </div>
+                            </div>
+                            <div class="cash-instructions">
+                                <h6>Instrucciones:</h6>
+                                <ol>
+                                    <li>Confirma tu pedido</li>
+                                    <li>Recibe el cupón por email</li>
+                                    <li>Presenta el cupón en la sucursal elegida</li>
+                                    <li>Paga el monto total</li>
+                                    <li>Tu pedido se procesará automáticamente</li>
+                                </ol>
+                                <p class="cash-note"><strong>Importante:</strong> Tienes 48 horas para realizar el pago, luego el pedido se cancela automáticamente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Información Transferencia -->
+                    <div id="transferInfo" class="payment-form hidden">
+                        <div class="payment-form-header">
+                            <h5>Transferencia Bancaria</h5>
+                            <p>Transfiere el importe total a nuestra cuenta bancaria:</p>
+                        </div>
+                        <div class="bank-details">
+                            <div class="bank-account">
+                                <h6>Banco Santander Río</h6>
+                                <div class="account-detail">
+                                    <span class="detail-label">Titular:</span>
+                                    <span class="detail-value">Ihara & London S.A.</span>
+                                </div>
+                                <div class="account-detail">
+                                    <span class="detail-label">CUIT:</span>
+                                    <span class="detail-value">30-12345678-9</span>
+                                </div>
+                                <div class="account-detail">
+                                    <span class="detail-label">CBU:</span>
+                                    <span class="detail-value copyable" data-copy="0720012300001234567890">072001230000123456789</span>
+                                    <button class="copy-btn" data-target="0720012300001234567890">📋</button>
+                                </div>
+                                <div class="account-detail">
+                                    <span class="detail-label">Alias:</span>
+                                    <span class="detail-value copyable" data-copy="IHARA.LONDON.STORE">IHARA.LONDON.STORE</span>
+                                    <button class="copy-btn" data-target="IHARA.LONDON.STORE">📋</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="transfer-instructions">
+                            <h6>Instrucciones:</h6>
+                            <ol>
+                                <li>Realiza la transferencia por el monto total</li>
+                                <li>Envía el comprobante por WhatsApp al +54 9 3492 61-3004</li>
+                                <li>Incluye tu número de pedido en el asunto</li>
+                                <li>Procesaremos tu pedido en 24hs hábiles</li>
+                            </ol>
+                            
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <!-- Paso 4: Resumen -->
+                <div class="checkout-step" data-step="4">
+                    <h4 class="section-title">Resumen del Pedido</h4>
+                    <div id="summaryItems" class="summary-box" style="margin-bottom:1rem;"></div>
+                    <div class="summary-box">
+                        <div class="summary-line"><span>Subtotal</span><span id="summarySubtotal">$0.00</span></div>
+                        <div class="summary-line"><span>Envío</span><span id="summaryShipping">$0.00</span></div>
+                        <div class="summary-line total"><span>Total</span><span id="summaryTotal">$0.00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout-navigation">
+                <button id="prevStep" class="nav-btn secondary">Atrás</button>
+                <button id="nextStep" class="nav-btn primary">Siguiente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Favoritos -->
+    <aside id="favoritesSidebar" class="favorites-sidebar">
+        <div class="cart-header">
+            <h3>Favoritos</h3>
+            <button id="closeFavorites" class="close-cart" aria-label="Cerrar">✕</button>
+        </div>
+        <div id="favoritesItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <button class="continue-shopping" onclick="document.getElementById('favoritesSidebar').classList.remove('active')">Cerrar</button>
+        </div>
+    </aside>
+    <script src="assets/js/store.min.js" defer></script>
+    <script src="assets/js/payment-system.min.js" defer></script>
+            <script>
+                // Endpoint backend newsletter (doble opt-in) vía redirect Netlify -> función serverless
+                // netlify.toml define /api/newsletter/subscribe -> /.netlify/functions/newsletter-subscribe
+                window.NEWSLETTER_ENDPOINT = '/api/newsletter/subscribe';
+                // Se eliminó el token API en cliente para no exponer credenciales.
+            </script>
+
+    <!-- Sistema de Reviews JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Manejo global de errores de carga de imágenes
+        document.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                console.warn('Image failed to load:', e.target.src);
+                e.target.style.display = 'none'; // Ocultar imagen que no carga
+                // Opcional: mostrar placeholder o imagen por defecto
+                e.target.alt = 'Imagen no disponible';
+            }
+        }, true);
+
+        // Manejo global de errores no capturados
+        window.addEventListener('error', function(e) {
+            if (e.message && e.message.includes('message channel closed')) {
+                // Silenciar errores de canal de mensaje cerrado (típicos de extensiones)
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            if (e.reason && e.reason.message && e.reason.message.includes('message channel closed')) {
+                // Silenciar promesas rechazadas por canal de mensaje cerrado
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Footer Reviews Toggle
+        const toggleReviewsBtn = document.getElementById('toggleReviews');
+        const reviewsDropdown = document.getElementById('reviewsDropdown');
+        
+        if (toggleReviewsBtn && reviewsDropdown) {
+            toggleReviewsBtn.addEventListener('click', function() {
+                const isOpen = reviewsDropdown.classList.contains('show');
+                
+                if (isOpen) {
+                    reviewsDropdown.classList.remove('show');
+                    toggleReviewsBtn.classList.remove('active');
+                } else {
+                    reviewsDropdown.classList.add('show');
+                    toggleReviewsBtn.classList.add('active');
+                    
+                    // Smooth scroll to reviews section
+                    setTimeout(() => {
+                        reviewsDropdown.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'nearest' 
+                        });
+                    }, 200);
+                }
+            });
+        }
+
+        // Reviews Filter Functionality
+        const filterBtns = document.querySelectorAll('.reviews-filters .filter-btn');
+        const reviewItems = document.querySelectorAll('.review-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active to clicked button
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                
+                reviewItems.forEach(item => {
+                    const shouldShow = filter === 'all' || 
+                                     item.dataset[filter] === 'true' ||
+                                     (filter === '5' && item.querySelector('.stars').textContent.includes('★★★★★')) ||
+                                     (filter === '4' && item.querySelector('.stars').textContent.includes('★★★★☆'));
+                    
+                    if (shouldShow) {
+                        item.style.display = 'block';
+                        item.style.animation = 'slideInUp 0.5s ease';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Always ensure write review section is visible after filtering
+                const writeReviewSection = document.querySelector('.write-review-section');
+                const writeReviewBtn = document.querySelector('.write-review-btn');
+                
+                if (writeReviewSection) {
+                    writeReviewSection.style.display = 'block !important';
+                    writeReviewSection.style.visibility = 'visible !important';
+                    writeReviewSection.style.opacity = '1';
+                }
+                
+                if (writeReviewBtn) {
+                    writeReviewBtn.style.display = 'inline-flex !important';
+                    writeReviewBtn.style.visibility = 'visible !important';
+                }
+                
+                // Re-initialize button if needed
+                initWriteReviewButton();
+            });
+        });
+
+        // Helpful button functionality
+        const helpfulBtns = document.querySelectorAll('.helpful-btn');
+        helpfulBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.add('clicked');
+                const currentText = this.textContent;
+                const match = currentText.match(/\((\d+)\)/);
+                if (match) {
+                    const count = parseInt(match[1]) + 1;
+                    this.textContent = currentText.replace(/\(\d+\)/, `(${count})`);
+                }
+                
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 600);
+            });
+        });
+        let currentRating = 0;
+
+        // Sample reviews data
+        const reviewsData = {
+            'bolso-london-heritage': {
+                overall: 4.8,
+                total: 127,
+                breakdown: { 5: 78, 4: 15, 3: 5, 2: 1, 1: 1 },
+                reviews: [
+                    {
+                        id: 1,
+                        rating: 5,
+                        title: 'Increíble calidad',
+                        text: 'Superó todas mis expectativas. El cuero es de primera calidad y los detalles son perfectos.',
+                        author: 'María González',
+                        date: '2025-08-20',
+                        verified: true,
+                        helpful: 23,
+                        photos: ['photo1.jpg']
+                    },
+                    {
+                        id: 2,
+                        rating: 5,
+                        title: 'Elegante y funcional',
+                        text: 'Perfecto para el día a día y ocasiones especiales. Los compartimentos están muy bien pensados.',
+                        author: 'Ana Martín',
+                        date: '2025-08-18',
+                        verified: true,
+                        helpful: 18,
+                        photos: []
+                    },
+                    {
+                        id: 3,
+                        rating: 4,
+                        title: 'Muy bonito pero un poco caro',
+                        text: 'Me encanta el diseño y la calidad, aunque el precio es elevado. Vale la pena la inversión.',
+                        author: 'Carlos López',
+                        date: '2025-08-15',
+                        verified: true,
+                        helpful: 12,
+                        photos: []
+                    }
+                ]
+            },
+            'reloj-ihara-classic': {
+                overall: 4.6,
+                total: 89,
+                breakdown: { 5: 65, 4: 18, 3: 4, 2: 1, 1: 1 },
+                reviews: [
+                    {
+                        id: 1,
+                        rating: 5,
+                        title: 'Reloj excepcional',
+                        text: 'La calidad del movimiento suizo es evidente. Muy preciso y elegante.',
+                        author: 'Roberto Silva',
+                        date: '2025-08-22',
+                        verified: true,
+                        helpful: 31,
+                        photos: ['watch1.jpg', 'watch2.jpg']
+                    },
+                    {
+                        id: 2,
+                        rating: 4,
+                        title: 'Buena compra',
+                        text: 'Estoy muy satisfecho con la compra. El diseño es clásico y atemporal.',
+                        author: 'Luis Fernández',
+                        date: '2025-08-19',
+                        verified: true,
+                        helpful: 15,
+                        photos: []
+                    }
+                ]
+            }
+        };
+
+        // Footer reviews functionality preserved
+        // Modal functions removed - now using footer reviews system
+
+        // Utility functions for reviews
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '<span class="star active">★</span>';
+                } else if (i - 0.5 <= rating) {
+                    stars += '<span class="star half">★</span>';
+                } else {
+                    stars += '<span class="star">★</span>';
+                }
+            }
+            return stars;
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('es-ES', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+
+        // Footer reviews filter functionality
+        function filterReviews(filter) {
+            const reviewItems = document.querySelectorAll('.footer-reviews-section-full-width .review-item');
+            
+            reviewItems.forEach(item => {
+                let show = false;
+                
+                switch(filter) {
+                    case 'all':
+                        show = true;
+                        break;
+                    case 'verified':
+                        show = item.dataset.verified === 'true';
+                        break;
+                    case 'photos':
+                        show = item.dataset.photos === 'true';
+                        break;
+                    case '5':
+                    case '4':
+                    case '3':
+                    case '2':
+                    case '1':
+                        show = item.dataset.rating === filter;
+                        break;
+                }
+                
+                item.style.display = show ? 'block' : 'none';
+            });
+        }
+
+        // Global functions for review actions
+        window.markHelpful = function(reviewId) {
+            alert('¡Gracias por tu feedback!');
+        };
+
+        window.reportReview = function(reviewId) {
+            if (confirm('¿Estás seguro de que quieres reportar esta reseña?')) {
+                alert('Reseña reportada. Nuestro equipo la revisará.');
+            }
+        };
+
+        // Write Review Button Functionality - Enhanced Version
+        function initWriteReviewButton() {
+            const writeReviewBtn = document.querySelector('.write-review-btn');
+            const writeReviewSection = document.querySelector('.write-review-section');
+            
+            // Force section to be visible
+            if (writeReviewSection) {
+                writeReviewSection.style.display = 'block !important';
+                writeReviewSection.style.visibility = 'visible !important';
+                writeReviewSection.style.opacity = '1';
+            }
+            
+            if (writeReviewBtn) {
+                // Force button to be visible
+                writeReviewBtn.style.display = 'inline-flex !important';
+                writeReviewBtn.style.visibility = 'visible !important';
+                
+                writeReviewBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openWriteReviewModal();
+                });
+            }
+        }
+
+        // Initialize immediately and after DOM changes
+        initWriteReviewButton();
+        
+        // Also initialize after a short delay to ensure DOM is fully loaded
+        setTimeout(initWriteReviewButton, 1000);
+
+        // Write Review Modal Functions
+        function openWriteReviewModal() {
+            // Create modal HTML
+            const modalHTML = `
+                <div id="writeReviewModal" class="write-review-modal">
+                    <div class="write-review-content">
+                        <div class="write-review-header">
+                            <h3>Escribir una reseña</h3>
+                            <button class="close-modal-btn">&times;</button>
+                        </div>
+                        <form id="writeReviewForm" class="review-form">
+                            <div class="form-group">
+                                <label>Tu puntuación:</label>
+                                <div class="star-rating" id="reviewStars">
+                                    <span class="star" data-rating="1">★</span>
+                                    <span class="star" data-rating="2">★</span>
+                                    <span class="star" data-rating="3">★</span>
+                                    <span class="star" data-rating="4">★</span>
+                                    <span class="star" data-rating="5">★</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reviewTitle">Título de la reseña:</label>
+                                <input type="text" id="reviewTitle" name="title" placeholder="Resumen de tu experiencia" maxlength="100" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reviewText">Tu reseña:</label>
+                                <textarea id="reviewText" name="text" rows="6" placeholder="Comparte tus pensamientos sobre este producto..." maxlength="1000" required></textarea>
+                                <small class="char-counter">0/1000 caracteres</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reviewerName">Tu nombre:</label>
+                                <input type="text" id="reviewerName" name="name" placeholder="Tu nombre (público)" maxlength="50" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reviewerEmail">Email:</label>
+                                <input type="email" id="reviewerEmail" name="email" placeholder="tu@email.com (privado)" required>
+                                <small>Tu email no será público, solo lo usaremos para verificación</small>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="cancel-btn" onclick="closeWriteReviewModal()">Cancelar</button>
+                                <button type="submit" class="submit-btn">Enviar Reseña</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+
+            // Add modal to body
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+            
+            // Initialize modal functionality
+            initWriteReviewModal();
+        }
+
+        function initWriteReviewModal() {
+            const modal = document.getElementById('writeReviewModal');
+            if (!modal) return;
+            
+            const form = document.getElementById('writeReviewForm');
+            const stars = document.querySelectorAll('#reviewStars .star');
+            const textArea = document.getElementById('reviewText');
+            const charCounter = document.querySelector('.char-counter');
+            const closeBtn = document.querySelector('.close-modal-btn');
+            let selectedRating = 0;
+
+            // Star rating functionality
+            stars.forEach((star, index) => {
+                star.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    selectedRating = parseInt(this.dataset.rating);
+                    updateStars(selectedRating);
+                });
+                
+                star.addEventListener('mouseover', function(e) {
+                    const hoverRating = parseInt(this.dataset.rating);
+                    updateStars(hoverRating);
+                });
+                
+                // Improve accessibility
+                star.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        selectedRating = parseInt(this.dataset.rating);
+                        updateStars(selectedRating);
+                    }
+                });
+                
+                star.setAttribute('tabindex', '0');
+                star.style.cursor = 'pointer';
+            });
+
+            // Reset stars on mouse leave
+            const starsContainer = document.getElementById('reviewStars');
+            if (starsContainer) {
+                starsContainer.addEventListener('mouseleave', function() {
+                    updateStars(selectedRating);
+                });
+            }
+
+            function updateStars(rating) {
+                stars.forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.add('active');
+                        star.style.color = '#d4af37';
+                    } else {
+                        star.classList.remove('active');
+                        star.style.color = '#ddd';
+                    }
+                });
+            }
+
+            // Character counter
+            if (textArea && charCounter) {
+                textArea.addEventListener('input', function() {
+                    const count = this.value.length;
+                    charCounter.textContent = `${count}/1000 caracteres`;
+                    charCounter.style.color = count > 900 ? '#ef4444' : '#666';
+                });
+            }
+
+            // Close modal functionality
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeWriteReviewModal();
+                });
+                closeBtn.style.cursor = 'pointer';
+            }
+            
+            // Close on outside click
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeWriteReviewModal();
+                    }
+                });
+            }
+            
+            // Close on ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display !== 'none') {
+                    closeWriteReviewModal();
+                }
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (selectedRating === 0) {
+                    alert('Por favor selecciona una puntuación');
+                    return;
+                }
+
+                // Collect form data
+                const formData = new FormData(form);
+                const reviewData = {
+                    rating: selectedRating,
+                    title: formData.get('title'),
+                    text: formData.get('text'),
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    date: new Date().toISOString(),
+                    verified: false
+                };
+                
+                // Add review to the page immediately
+                try {
+                    addNewReviewToPage(reviewData);
+                    alert('¡Gracias por tu reseña! Tu reseña ha sido publicada y aparece en la lista.');
+                } catch (error) {
+                    alert('¡Gracias por tu reseña! Ha sido enviada correctamente.');
+                }
+                
+                closeWriteReviewModal();
+            });
+
+            // Focus trap and accessibility
+            modal.focus();
+        }
+
+        window.closeWriteReviewModal = function() {
+            const modal = document.getElementById('writeReviewModal');
+            if (modal) {
+                // Add fade out animation
+                modal.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    modal.remove();
+                }, 300);
+            }
+        };
+
+        // Function to add new review to the page
+        function addNewReviewToPage(reviewData) {
+            // First, ensure the reviews dropdown is open
+            const reviewsDropdown = document.getElementById('reviewsDropdown');
+            const toggleReviewsBtn = document.getElementById('toggleReviews');
+            
+            if (reviewsDropdown && !reviewsDropdown.classList.contains('show')) {
+                reviewsDropdown.classList.add('show');
+                if (toggleReviewsBtn) {
+                    toggleReviewsBtn.classList.add('active');
+                }
+            }
+            
+            const reviewsList = document.querySelector('.reviews-list');
+            if (!reviewsList) {
+                return;
+            }
+
+            // Generate stars HTML
+            function generateStarsHTML(rating) {
+                let starsHTML = '';
+                for (let i = 1; i <= 5; i++) {
+                    starsHTML += i <= rating ? '★' : '☆';
+                }
+                return starsHTML;
+            }
+
+            // Format date
+            function formatReviewDate(isoDate) {
+                const date = new Date(isoDate);
+                const now = new Date();
+                const diffTime = Math.abs(now - date);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                
+                if (diffDays === 0) return 'Hace pocos minutos';
+                if (diffDays === 1) return 'Hace 1 día';
+                if (diffDays < 7) return `Hace ${diffDays} días`;
+                return date.toLocaleDateString('es-ES');
+            }
+
+            // Get first letter of name for avatar
+            const avatarLetter = reviewData.name.charAt(0).toUpperCase();
+
+            // Create new review HTML
+            const newReviewHTML = `
+                <div class="review-item" data-verified="${reviewData.verified}" data-photos="false" data-rating="${reviewData.rating}">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <div class="author-avatar">${avatarLetter}</div>
+                            <div class="author-details">
+                                <h4>${reviewData.name}</h4>
+                                ${reviewData.verified ? '<div class="verified-badge">✓ Compra verificada</div>' : ''}
+                            </div>
+                        </div>
+                        <div class="review-date">${formatReviewDate(reviewData.date)}</div>
+                    </div>
+                    <div class="review-rating">
+                        <div class="stars">${generateStarsHTML(reviewData.rating)}</div>
+                    </div>
+                    <h5 class="review-title">${reviewData.title}</h5>
+                    <p class="review-text">${reviewData.text}</p>
+                    <div class="review-actions">
+                        <button class="helpful-btn">👍 Útil (0)</button>
+                        <button class="report-btn">⚠️ Reportar</button>
+                    </div>
+                </div>
+            `;
+
+            // Add the new review at the top of the list
+            reviewsList.insertAdjacentHTML('afterbegin', newReviewHTML);
+
+            // Add event listeners for the new review's buttons
+            const newReview = reviewsList.querySelector('.review-item');
+            const helpfulBtn = newReview.querySelector('.helpful-btn');
+            const reportBtn = newReview.querySelector('.report-btn');
+
+            helpfulBtn.addEventListener('click', function() {
+                this.classList.add('clicked');
+                const currentText = this.textContent;
+                const match = currentText.match(/\((\d+)\)/);
+                if (match) {
+                    const count = parseInt(match[1]) + 1;
+                    this.textContent = currentText.replace(/\(\d+\)/, `(${count})`);
+                }
+                
+                setTimeout(() => {
+                    this.classList.remove('clicked');
+                }, 600);
+            });
+
+            // Scroll to the new review with animation
+            setTimeout(() => {
+                newReview.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest' 
+                });
+                newReview.style.animation = 'slideInUp 0.8s ease';
+            }, 100);
+        }
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const filterBtns = document.querySelectorAll('.product-filters .filter-btn');
+        const cards = document.querySelectorAll('.product-card');
+        filterBtns.forEach(btn=> btn.addEventListener('click', ()=>{
+            filterBtns.forEach(b=> b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.dataset.category;
+            
+            // Resetear filtros avanzados al cambiar categoría
+            if(window.state && window.state.currentFilters) {
+                window.state.currentFilters.category = cat;
+                // Solo resetear filtros si no es "todos"
+                if(cat !== 'todos') {
+                    window.state.currentFilters.priceRange = 'all';
+                    window.state.currentFilters.material = 'all';
+                    window.state.currentFilters.sortBy = 'featured';
+                    
+                    // Resetear visualmente los selects
+                    const priceSelect = document.querySelector('#priceRange');
+                    const materialSelect = document.querySelector('#material');
+                    const sortSelect = document.querySelector('#sortBy');
+                    
+                    if(priceSelect) priceSelect.value = 'all';
+                    if(materialSelect) materialSelect.value = 'all';
+                    if(sortSelect) sortSelect.value = 'featured';
+                }
+                
+                // Usar la función filterProducts del store.js si existe
+                if(window.filterProducts) {
+                    window.filterProducts();
+                } else {
+                    // Fallback al método original
+                    cards.forEach(c=>{
+                        const cCat = c.getAttribute('data-category')||'';
+                        c.style.display = (cat==='todos'|| cCat===cat)? 'block':'none';
+                    });
+                }
+            } else {
+                // Fallback al método original
+                cards.forEach(c=>{
+                    const cCat = c.getAttribute('data-category')||'';
+                    c.style.display = (cat==='todos'|| cCat===cat)? 'block':'none';
+                });
+            }
+        }));
+        const observer = new IntersectionObserver(entries=>{
+            entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('active'); observer.unobserve(e.target);} });
+        }, { threshold:.15 });
+        document.querySelectorAll('.reveal').forEach(el=> observer.observe(el));
+
+                // Galería slider
+                const slider = document.querySelector('.gallery-slider');
+                if(slider){
+                    const slides = Array.from(slider.querySelectorAll('.gallery-slide'));
+                    const prev = slider.querySelector('.gallery-nav.prev');
+                    const next = slider.querySelector('.gallery-nav.next');
+                    const dotsWrap = slider.querySelector('.gallery-dots');
+                        let index = 0; let autoTimer; const AUTO_MS = 6000; let paused=false; let userPaused=false;
+                        const playToggle = slider.querySelector('.gallery-toggle-play');
+                        // Parámetros de conexión para prefetch adaptativo
+                        const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                        const canAggressivePrefetch = ()=>{
+                            if(!conn) return true;
+                            if(conn.saveData) return false;
+                            const slowTypes = ['slow-2g','2g'];
+                            if(slowTypes.includes(conn.effectiveType)) return false;
+                            return true;
+                        };
+                    function buildDots(){
+                        slides.forEach((_,i)=>{
+                            const b=document.createElement('button'); b.setAttribute('aria-label','Ir a diapositiva '+(i+1)); b.dataset.index=i; if(i===0) b.classList.add('active'); dotsWrap.appendChild(b);
+                        });
+                    }
+                    function prefetch(nextIdx){
+                        const target = slides[(nextIdx+slides.length)%slides.length]?.querySelector('img.lazy-blur');
+                        if(target && !target.classList.contains('prefetched')){
+                            const full = target.dataset.full;
+                            if(full){
+                                const link = document.createElement('link');
+                                link.rel='prefetch';
+                                link.as='image';
+                                link.href=full;
+                                document.head.appendChild(link);
+                                target.classList.add('prefetched');
+                            }
+                        }
+                    }
+                    function go(i){
+                        if(i===index) return;
+                        slides[index].classList.remove('active');
+                        index = (i+slides.length)%slides.length;
+                        slides[index].classList.add('active');
+                        dotsWrap.querySelectorAll('button').forEach(d=> d.classList.toggle('active', Number(d.dataset.index)===index));
+                        // prefetch siguiente inmediatamente (adaptativo)
+                        if(canAggressivePrefetch()) prefetch(index+1);
+                    }
+                    function nextSlide(){ go(index+1); }
+                    function prevSlide(){ go(index-1); }
+                    function auto(){ clearTimeout(autoTimer); if(paused||userPaused) return; autoTimer=setTimeout(()=>{ nextSlide(); auto(); }, AUTO_MS); }
+                    buildDots();
+                    // Prefetch inicial de segundo slide (adaptativo)
+                    if(canAggressivePrefetch()) prefetch(1);
+                    auto();
+                    next?.addEventListener('click', ()=>{ nextSlide(); auto(); });
+                    prev?.addEventListener('click', ()=>{ prevSlide(); auto(); });
+                    dotsWrap.addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b) return; go(Number(b.dataset.index)); auto(); });
+                    slider.addEventListener('mouseenter', ()=>{ if(!userPaused){ paused=true; clearTimeout(autoTimer); }});
+                    slider.addEventListener('mouseleave', ()=>{ if(!userPaused){ paused=false; auto(); }});
+                    // Swipe táctil
+                    let startX=0, dx=0; const threshold=50;
+                    slider.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; }, {passive:true});
+                    slider.addEventListener('touchmove', e=>{ dx = e.touches[0].clientX - startX; }, {passive:true});
+                    slider.addEventListener('touchend', ()=>{ if(Math.abs(dx)>threshold){ if(dx<0) nextSlide(); else prevSlide(); auto(); } dx=0; });
+                    // Accesibilidad con teclado
+                    slider.addEventListener('keydown', e=>{ if(e.key==='ArrowRight'){ nextSlide(); auto(); } else if(e.key==='ArrowLeft'){ prevSlide(); auto(); } });
+                    slider.tabIndex=0;
+                                // CTA ver producto -> scroll a sección productos y resaltar
+                                slider.addEventListener('click', e=>{
+                                    const btn = e.target.closest('.gallery-cta');
+                                    if(!btn) return;
+                                    const prod = btn.dataset.product?.toLowerCase();
+                                    const productsSection = document.querySelector('#productos');
+                                    if(productsSection){ productsSection.scrollIntoView({behavior:'smooth'}); }
+                                    const card = Array.from(document.querySelectorAll('.product-card')).find(c=> c.querySelector('h3')?.textContent.toLowerCase().includes(prod));
+                                    if(card){
+                                        card.classList.add('pulse-temp');
+                                        setTimeout(()=> card.classList.remove('pulse-temp'), 1800);
+                                    }
+                                }, false);
+                                // Botón pausar / reproducir
+                                playToggle?.addEventListener('click', ()=>{
+                                        userPaused = !userPaused;
+                                        if(userPaused){
+                                            clearTimeout(autoTimer);
+                                            playToggle.textContent='▶';
+                                            playToggle.setAttribute('aria-label','Reanudar reproducción');
+                                            playToggle.dataset.state='paused';
+                                        } else {
+                                            playToggle.textContent='❚❚';
+                                            playToggle.setAttribute('aria-label','Pausar reproducción automática');
+                                            playToggle.dataset.state='playing';
+                                            auto();
+                                        }
+                                    });
+                    conn?.addEventListener?.('change', ()=>{ if(canAggressivePrefetch()) prefetch(index+1); });
+                    
+                    // Lazy progressive load galería con manejo de errores
+                    const lazyImgs = document.querySelectorAll('.gallery img.lazy-blur');
+                    const io = new IntersectionObserver(entries=>{
+                        entries.forEach(entry=>{
+                            if(entry.isIntersecting){
+                                const img = entry.target;
+                                const full = img.dataset.full;
+                                if(full){
+                                    const hi = new Image();
+                                    hi.src = full;
+                                    hi.onload = ()=>{
+                                        img.src = full;
+                                        img.classList.add('loaded');
+                                    };
+                                    hi.onerror = ()=>{
+                                        console.warn('Failed to load image:', full);
+                                        // Usar una imagen de respaldo local o mantener la imagen de baja calidad
+                                        img.classList.add('loaded');
+                                        img.style.filter = 'blur(0px)';
+                                    };
+                                }
+                                io.unobserve(img);
+                            }
+                        });
+                    }, { rootMargin:'200px' });
+                    lazyImgs.forEach(i=> io.observe(i));
+                    // Prefetch eagerness: al hacer hover sobre dot, prefetch esa imagen
+                    document.querySelector('.gallery-dots')?.addEventListener('mouseover', e=>{
+                        const b = e.target.closest('button'); if(!b) return; if(canAggressivePrefetch()) prefetch(Number(b.dataset.index));
+                    });
+                }
+    });
+    </script>
+</body>
+</html>

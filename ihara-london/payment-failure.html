@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error en el Pago - Ihara & London</title>
+    <meta name="description" content="Hubo un problema con tu pago. Prueba nuevamente o contacta con nuestro soporte.">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="stylesheet" href="/assets/styles/store.css">
+    <style>
+        .failure-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .failure-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        .failure-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .error-details {
+            background: #fee2e2;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+            border-left: 4px solid #ef4444;
+        }
+        
+        .solutions {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #4f46e5;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #3730a3;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        
+        .btn-secondary:hover {
+            background: #f9fafb;
+        }
+        
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+        
+        .common-errors {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        
+        .error-item {
+            background: #f9fafb;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid #ef4444;
+        }
+        
+        @media (max-width: 768px) {
+            .failure-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="failure-container">
+        <div class="failure-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+        </div>
+        
+        <h1>Error en el Pago</h1>
+        <p class="text-lg text-gray-600 mb-4">
+            Lo sentimos, hubo un problema procesando tu pago. No se ha realizado ningún cargo.
+        </p>
+        
+        <div class="error-details">
+            <h3>❌ Detalles del Error</h3>
+            <div id="error-info">
+                <p><strong>Código de error:</strong> <span id="error-code">Cargando...</span></p>
+                <p><strong>Motivo:</strong> <span id="error-reason">Cargando...</span></p>
+                <p><strong>Número de referencia:</strong> <span id="order-number">Cargando...</span></p>
+                <p><strong>Fecha:</strong> <span id="error-date">Cargando...</span></p>
+            </div>
+        </div>
+        
+        <div class="solutions">
+            <h3>💡 ¿Qué puedes hacer?</h3>
+            <ul>
+                <li><strong>Verifica tus datos:</strong> Asegúrate de que la información de la tarjeta sea correcta</li>
+                <li><strong>Fondos suficientes:</strong> Confirma que tengas saldo disponible</li>
+                <li><strong>Prueba otro método:</strong> Intenta con una tarjeta diferente o efectivo</li>
+                <li><strong>Contacta tu banco:</strong> Tu banco puede haber bloqueado la transacción</li>
+            </ul>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/ihara-london/ihara_london_store.html" class="btn btn-primary">
+                Intentar Nuevamente
+            </a>
+            <a href="mailto:support@ihara-london.com?subject=Error en el pago - Referencia: ${urlParams.get('external_reference')}" class="btn btn-secondary">
+                Contactar Soporte
+            </a>
+        </div>
+        
+        <div class="common-errors">
+            <h4>Errores Más Comunes</h4>
+            <div class="error-item">
+                <strong>Tarjeta rechazada:</strong> Verifica los datos o contacta tu banco
+            </div>
+            <div class="error-item">
+                <strong>Fondos insuficientes:</strong> Asegúrate de tener saldo disponible
+            </div>
+            <div class="error-item">
+                <strong>Límite excedido:</strong> Verifica los límites de tu tarjeta
+            </div>
+            <div class="error-item">
+                <strong>Tarjeta vencida:</strong> Usa una tarjeta vigente
+            </div>
+            <div class="error-item">
+                <strong>CVV incorrecto:</strong> Verifica el código de seguridad
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+            <h4>Métodos de Pago Alternativos</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 6px; text-align: center;">
+                    <strong>💳 Otra Tarjeta</strong>
+                    <p style="font-size: 0.875rem; margin: 0.5rem 0;">Prueba con una tarjeta diferente</p>
+                </div>
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 6px; text-align: center;">
+                    <strong>💰 Efectivo</strong>
+                    <p style="font-size: 0.875rem; margin: 0.5rem 0;">RapiPago o PagoFácil</p>
+                </div>
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 6px; text-align: center;">
+                    <strong>🏦 Transferencia</strong>
+                    <p style="font-size: 0.875rem; margin: 0.5rem 0;">10% de descuento</p>
+                </div>
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 6px; text-align: center;">
+                    <strong>₿ Crypto</strong>
+                    <p style="font-size: 0.875rem; margin: 0.5rem 0;">15% de descuento</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: #dbeafe; border-radius: 8px;">
+            <p><strong>🔒 Seguridad:</strong> Tu información está protegida. No se realizó ningún cargo y tus datos no fueron comprometidos.</p>
+        </div>
+    </div>
+
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar información del error
+            const paymentId = urlParams.get('payment_id');
+            const status = urlParams.get('status');
+            const statusDetail = urlParams.get('status_detail');
+            const externalReference = urlParams.get('external_reference');
+            
+            // Mostrar código de error
+            if (statusDetail) {
+                document.getElementById('error-code').textContent = statusDetail;
+                document.getElementById('error-reason').textContent = getErrorReason(statusDetail);
+            } else {
+                document.getElementById('error-code').textContent = status || 'UNKNOWN_ERROR';
+                document.getElementById('error-reason').textContent = 'Error no especificado';
+            }
+            
+            if (paymentId || externalReference) {
+                document.getElementById('order-number').textContent = externalReference || paymentId;
+            }
+            
+            document.getElementById('error-date').textContent = new Date().toLocaleDateString('es-AR');
+            
+            // Enviar evento para analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'purchase_failed', {
+                    'transaction_id': externalReference || paymentId,
+                    'error_code': statusDetail || status,
+                    'error_reason': getErrorReason(statusDetail || status)
+                });
+            }
+        });
+        
+        function getErrorReason(statusDetail) {
+            const errors = {
+                'cc_rejected_insufficient_amount': 'Fondos insuficientes',
+                'cc_rejected_bad_filled_card_number': 'Número de tarjeta incorrecto',
+                'cc_rejected_bad_filled_date': 'Fecha de vencimiento incorrecta',
+                'cc_rejected_bad_filled_other': 'Datos de tarjeta incorrectos',
+                'cc_rejected_bad_filled_security_code': 'Código de seguridad incorrecto',
+                'cc_rejected_blacklist': 'Tarjeta bloqueada',
+                'cc_rejected_call_for_authorize': 'Autorización requerida del banco',
+                'cc_rejected_card_disabled': 'Tarjeta deshabilitada',
+                'cc_rejected_card_error': 'Error en la tarjeta',
+                'cc_rejected_duplicated_payment': 'Pago duplicado',
+                'cc_rejected_high_risk': 'Transacción de alto riesgo',
+                'cc_rejected_invalid_installments': 'Cuotas no válidas',
+                'cc_rejected_max_attempts': 'Máximo de intentos excedido',
+                'cc_rejected_other_reason': 'Tarjeta rechazada por otros motivos'
+            };
+            
+            return errors[statusDetail] || 'Error no especificado en el procesamiento del pago';
+        }
+    </script>
+</body>
+</html>

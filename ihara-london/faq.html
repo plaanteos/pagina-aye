@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Ihara & London</title>
+    <meta name="description" content="Encuentra respuestas a las preguntas más frecuentes sobre nuestros productos, envíos, devoluciones y más.">
+    <link rel="stylesheet" href="assets/styles/store.css">
+    <style>
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-header h1 {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-search {
+            margin-bottom: 2rem;
+        }
+        
+        .faq-search input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-btn {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gold-accent);
+            background: transparent;
+            color: var(--gold-accent);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--gold-accent);
+            color: var(--primary-black);
+        }
+        
+        .faq-section {
+            margin-bottom: 2rem;
+        }
+        
+        .faq-section h2 {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold-accent);
+        }
+        
+        .faq-item {
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1rem;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--gold-accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--light-gray);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1rem;
+        }
+        
+        .contact-support {
+            background: linear-gradient(135deg, var(--gold-accent), var(--warm-brown));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .contact-support h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .support-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .support-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--primary-black);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .support-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        body.dark .faq-question {
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+        
+        body.dark .faq-answer {
+            background: var(--primary-black);
+            color: var(--white);
+        }
+        
+        body.dark .faq-item {
+            border-color: var(--dark-gray);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="ihara_london_store.html" class="logo">Ihara & London</a>
+            <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">🌓</button>
+        </nav>
+    </header>
+
+    <main class="faq-container">
+        <div class="faq-header">
+            <h1>Preguntas Frecuentes</h1>
+            <p>Encuentra respuestas rápidas a las consultas más comunes</p>
+        </div>
+
+        <div class="faq-search">
+            <input type="text" id="faqSearch" placeholder="Buscar en las preguntas frecuentes...">
+        </div>
+
+        <div class="faq-categories">
+            <button class="category-btn active" data-category="all">Todas</button>
+            <button class="category-btn" data-category="productos">Productos</button>
+            <button class="category-btn" data-category="envios">Envíos</button>
+            <button class="category-btn" data-category="pagos">Pagos</button>
+            <button class="category-btn" data-category="devoluciones">Devoluciones</button>
+        </div>
+
+        <div class="faq-section" data-category="productos">
+            <h2>Productos</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Los productos son auténticos?
+                </div>
+                <div class="faq-answer">
+                    Sí, todos nuestros productos son 100% auténticos. Trabajamos directamente con marcas reconocidas y fabricantes certificados. Cada producto viene con su certificado de autenticidad.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Qué materiales utilizan?
+                </div>
+                <div class="faq-answer">
+                    Utilizamos materiales premium como cuero genuino italiano, acero inoxidable quirúrgico, oro de 18k, plata 925 sterling y cristales Swarovski. Cada producto especifica sus materiales en la descripción.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Cómo sé qué talla elegir?
+                </div>
+                <div class="faq-answer">
+                    Tenemos una guía de talles disponible en cada producto. Además, ofrecemos medición gratuita en nuestra tienda física. Para compras online, puedes contactarnos para asesoramiento personalizado.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Los productos vienen con garantía?
+                </div>
+                <div class="faq-answer">
+                    Sí, todos nuestros productos incluyen garantía de 2 años por defectos de fabricación. Los relojes mecánicos tienen garantía de 3 años. La garantía no cubre el uso normal o accidentes.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" data-category="envios">
+            <h2>Envíos</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Cuánto tiempo demora la entrega?
+                </div>
+                <div class="faq-answer">
+                    En CABA: 24-48 horas. En GBA: 2-3 días hábiles. Interior del país: 3-7 días hábiles. Los envíos se realizan de lunes a viernes. Te enviamos tracking por WhatsApp.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Cuánto cuesta el envío?
+                </div>
+                <div class="faq-answer">
+                    CABA: $500. GBA: $750. Interior: $1200. Envío gratis en compras superiores a $50.000. Retiro gratis en nuestra tienda de Recoleta.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Puedo cambiar la dirección de envío?
+                </div>
+                <div class="faq-answer">
+                    Sí, puedes cambiar la dirección hasta 2 horas antes del envío. Contáctanos por WhatsApp o email con tu número de pedido.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" data-category="pagos">
+            <h2>Pagos</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Qué métodos de pago aceptan?
+                </div>
+                <div class="faq-answer">
+                    Aceptamos: Mercado Pago (tarjetas y efectivo), tarjetas de crédito/débito, transferencia bancaria, Uala, Brubank, PayPal y criptomonedas (Bitcoin, USDT, DAI).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Puedo pagar en cuotas?
+                </div>
+                <div class="faq-answer">
+                    Sí, aceptamos hasta 12 cuotas sin interés con tarjetas de crédito participantes a través de Mercado Pago. También ofrecemos planes de financiación directa.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Es seguro pagar online?
+                </div>
+                <div class="faq-answer">
+                    Completamente seguro. Usamos SSL 256-bit y no almacenamos datos de tarjetas. Todos los pagos son procesados por plataformas certificadas PCI DSS.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" data-category="devoluciones">
+            <h2>Devoluciones</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Puedo devolver un producto?
+                </div>
+                <div class="faq-answer">
+                    Sí, tienes 30 días para devolver productos en perfecto estado. Productos personalizados no son devolubles. El producto debe estar sin usar con etiquetas originales.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Cómo inicio una devolución?
+                </div>
+                <div class="faq-answer">
+                    Contáctanos por WhatsApp o email con tu número de pedido y motivo. Te enviaremos las instrucciones y etiqueta de retorno gratuita.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ¿Cuándo recibo mi reembolso?
+                </div>
+                <div class="faq-answer">
+                    Una vez que recibimos y verificamos el producto, procesamos el reembolso en 48-72 horas. El tiempo de acreditación depende de tu banco/tarjeta.
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-support">
+            <h3>¿No encontraste tu respuesta?</h3>
+            <p>Nuestro equipo está aquí para ayudarte</p>
+            <div class="support-buttons">
+                <a href="https://wa.me/5491123456789" class="support-btn">WhatsApp</a>
+                <a href="mailto:soporte@iharalondo.com" class="support-btn">Email</a>
+                <a href="#contacto" class="support-btn">Contacto</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const searchInput = document.getElementById('faqSearch');
+            const sections = document.querySelectorAll('.faq-section');
+
+            // FAQ accordion
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Category filter
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const category = btn.dataset.category;
+                    sections.forEach(section => {
+                        if (category === 'all' || section.dataset.category === category) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                    const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        if (searchTerm.length > 0) {
+                            item.classList.add('active');
+                        }
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Show all sections when searching
+                if (searchTerm.length > 0) {
+                    sections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                }
+            });
+
+            // Theme toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.classList.toggle('dark', savedTheme === 'dark');
+
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+                const currentTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+            });
+        });
+    </script>
+</body>
+</html>
